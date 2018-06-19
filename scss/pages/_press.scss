@@ -1,0 +1,8 @@
+.press {
+  .video-banner {
+    background: url("../video/team.jpg") bottom center no-repeat;
+    @include rwd(tablet-up) {
+      background: none;
+    }
+  }
+}

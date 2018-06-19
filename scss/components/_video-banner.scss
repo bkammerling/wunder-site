@@ -1,0 +1,98 @@
+.video-banner {
+  // background: url("../video/team.jpg") bottom center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding: rem(130px) rem(25px);
+  position: relative;
+  overflow: hidden;
+
+  @at-root{
+    .meetup & {
+      background: transparent;
+    }
+  }
+
+  .container {
+    display: inline-block;
+    width: auto;
+  }
+
+  p {
+    color: $white;
+    font-weight: $font-black;
+    font-size: rem(18px);
+    max-width: rem(450px);
+    margin: rem(25px) auto;
+  }
+
+  @include rwd(tablet-up) {
+    padding: rem(200px) rem(25px);
+    justify-content: flex-start;
+
+    .container {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.video-banner__title-wrapper {
+  position: relative;
+  color: $white;
+  display: inline-block;
+  z-index: 2;
+  p {
+    font-weight: 500;
+  }
+}
+
+.video-banner__title {
+  span {
+    display: block;
+    opacity: 0.6;
+  }
+}
+
+.video-banner__arrow {
+  position: absolute;
+  bottom: rem(7px);
+  left: rem(-15px);
+
+  @include rwd(tablet-up) {
+    bottom: rem(18px);
+    left: rem(-35px);
+
+    img {
+      width: 20px;
+      height: 30px;
+    }
+  }
+}
+
+.video-banner__video {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  @include rwd(tablet-up) {
+    display: block;
+  }
+}
+
+.video-banner__overflow {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}

@@ -1,0 +1,49 @@
+.career-jobs {
+    background: $grey-light;
+    padding: rem(50px) 0 rem(25px);
+
+    h3 {
+        margin-bottom: rem(30px);
+    }
+
+    @include rwd(tablet-up) {
+        margin-top: rem(100px);
+        padding: rem(80px) 0 rem(120px);
+
+        h3 {
+            text-align: center;
+            margin-bottom: rem(60px);
+        }
+    }
+}
+
+.career-jobs__wrapper {
+    @include rwd(tablet-up) {
+        display: flex;
+    }
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+}
+
+.career-jobs__list {
+    font-weight: bold;
+    margin-bottom: rem(40px);
+
+    li:first-child {
+        font-size: rem(18px);
+        padding-bottom: rem(15px);
+    }
+
+    a {
+        color: $sky-blue;
+        padding: rem(8px) 0;
+        display: block;
+        font-size: rem(16px);
+    }
+
+    @include rwd(tablet-up) {
+        margin-bottom: 0;
+        flex-basis: 33.333%;
+    }
+}

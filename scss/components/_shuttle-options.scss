@@ -1,0 +1,92 @@
+.shuttle-options {
+  text-align: center;
+  padding: rem(10px) 0 rem(40px);
+
+  h3 {
+    color: $grey-heading;
+    margin: rem(60px) rem(30px) rem(60px) rem(15px);
+    padding: 0 0 0 rem(40px);
+    position: relative;    
+    text-align: left;   
+    font-size: rem(20px);     
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: rem(24px);
+      height: rem(36px);
+      background-image: url('../img/icon-banner-arrow.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: rem(0px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  h2 {
+    margin-bottom: rem(10px);
+  }
+
+  p {
+    padding: 0 rem(20px);
+    margin-bottom: rem(25px);
+  }
+
+  img {
+    margin-bottom: rem(30px);
+  }
+
+  a {
+    color: $sky-blue;
+    font-size: rem(20px);
+    font-weight: $font-black;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .btn {
+    margin: auto;
+    font-size: rem(14px);
+    margin-top: rem(40px);
+    padding-left: rem(80px);
+    padding-right: rem(80px);
+    color: $white;
+    font-weight: $font-bold;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @include rwd(tablet-up) {
+    padding: rem(100px) 0;
+
+    h3 {
+      font-size: rem(24px);
+      margin: rem(60px) 0 rem(60px) 10%;
+    }
+  }
+}
+
+.shuttle-options__image {
+  img {
+    display: none;
+
+    @include rwd(tablet-up) {
+      display: block;
+    }
+  }
+}
+
+.shuttle-options__icon {
+  margin-top: rem(30px);
+
+  @include rwd(tablet-up) {
+    display: none;
+  }
+}

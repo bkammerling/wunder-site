@@ -1,0 +1,28 @@
+.press-logotypes {
+  text-align: center;
+  padding: rem(70px) 0;
+
+  img {
+    margin: rem(40px) auto rem(60px);
+    max-width: 100%;    
+
+    @include rwd(tablet-up) {
+      margin: rem(40px) auto;
+    }
+  }
+
+  a {
+    font-size: rem(20px);
+    color: $sky-blue;
+    font-weight: $font-black;    
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include rwd(tablet-up) {
+    padding: rem(110px) 0;
+  }
+}

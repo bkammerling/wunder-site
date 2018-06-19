@@ -1,0 +1,55 @@
+.contact-form {
+  background: $grey-light;
+  padding: rem(45px) 0 rem(15px);
+
+  h3 {
+    padding-bottom: rem(10px);
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: rem(18px) rem(15px);
+    border-radius: rem(3px);
+    margin-bottom: rem(15px);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .1);
+    font-size: 14px;
+    color: #969696;
+    font-family: $base-font-family;
+  }
+
+  textarea {
+    height: rem(200px);
+  }
+
+  form {
+    padding: rem(30px) 0;
+  }
+
+  .btn { 
+    display: block;
+    width: 100%;    
+  }
+
+  @include rwd(tablet-up) {
+    padding: rem(70px) 0;
+
+    textarea {
+      height: 100%;
+    }
+
+    .btn {
+      width: auto;
+      padding: rem(15px) rem(80px);
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: rem(30px);
+    }
+
+    input:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

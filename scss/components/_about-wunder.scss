@@ -1,0 +1,87 @@
+.about-wunder {  
+  position: relative;
+
+  &.container {
+    padding: 0 0 rem(40px) 0;
+    overflow: hidden;
+  }
+
+  @include rwd(tablet-up) {
+    &.container {
+      overflow: visible;
+      padding: 0;
+      margin-bottom: rem(150px);
+    }
+  }
+}
+
+.about-wunder__content {
+  margin: 0 rem(15px);
+
+  h3 {
+    margin-bottom: rem(20px);   
+    margin-top: rem(40px); 
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: rem(15px);    
+  }
+
+  @include rwd(tablet-up) {
+    margin: 0;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+}
+
+.about-wunder__image {
+  img {
+    width: 100%;
+  }
+}
+
+.about-wunder__blocks {  
+  display: flex;
+  justify-content: space-around;
+  background: $white;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: rem(20px);
+
+  @include rwd(tablet-up) {    
+    margin-top: 0;
+    position: absolute;
+    width: 50%;
+    z-index: 2;
+    right: 0;
+    bottom: rem(-60px);
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.about-wunder__block {
+  text-align: center;  
+  border-radius: 3px;  
+  padding: rem(25px) rem(35px);
+
+  h3 {
+    color: $grass-green;
+    font-size: rem(40px);
+  }
+
+  p {
+    max-width: rem(110px);
+    color: $olive;
+    font-weight: $font-bold;
+    font-size: rem(18px);
+  }
+
+  @include rwd(tablet-up) {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    background: $white;
+  }
+}

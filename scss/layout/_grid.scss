@@ -1,0 +1,19 @@
+/*
+ * Bootstrap Grid v4.0.0-beta.2 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/*
+ * This boilerplate uses Bootstrap 4 flexbox grid
+ * Consider removing some of imports if you don't use all the features
+ * Media queries breakpoints are set up in scss variables
+ */
+
+@import "grid/_grid-base";
+@import "grid/_grid-containers";
+@import "grid/_grid-columns";
+@import "grid/_grid-order";
+@import "grid/_grid-offset";
+@import "grid/_grid-utils";

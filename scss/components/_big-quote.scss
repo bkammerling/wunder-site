@@ -1,0 +1,64 @@
+.big-quote.container {
+  position: relative;
+  padding: 0 0 rem(30px) 0;
+  
+  @include rwd(tablet-up) {
+    padding: 0 rem(15px);
+    margin: rem(120px) auto rem(200px);
+  }
+}
+
+.big-quote__image {
+  width: 100%;
+
+  @include rwd(tablet-up) {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50%;
+    transform: translateY(-50%);
+  }
+
+  @include rwd(1200px) {
+    right: rem(-45px);
+  }
+}
+
+.big-quote__content {
+  max-width: rem(650px);
+  position: relative;
+  z-index: 2;
+  padding: rem(30px);
+
+  @include rwd(tablet-up) {
+    padding: rem(15px);
+    margin-left: 10%;
+  }
+}
+
+.big-quote__title {
+  font-size: rem(20px);
+  text-transform: uppercase;
+  font-weight: $font-black;
+  letter-spacing: 2.8px;
+  line-height: 1.25;
+  color: $olive;  
+  margin-bottom: rem(5px);
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: rem(47px);
+    height: rem(30px);
+    background: url('../img/icon-quote.svg') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: rem(-10px);
+    left: rem(-20px);
+  }
+}
+
+.big-quote__author {
+  margin-bottom: rem(10px);
+}

@@ -1,0 +1,66 @@
+.text-boxes.container {
+  padding: 0;  
+  overflow: hidden;
+
+  @include rwd(tablet-up) {
+    padding: rem(80px) 0;
+    overflow: visible;
+  }
+}
+
+.text-box {
+  padding: 0 0 rem(40px);
+  position: relative;
+
+  h2 {
+    margin-bottom: rem(15px);
+  }
+
+  p {
+    margin-bottom: rem(20px);
+  }
+
+  span {
+    color: $sky-blue;
+    font-weight: $font-bold;
+  }
+
+  img {
+    max-width: 100%;
+    margin-bottom: rem(20px);
+  }
+
+  @include rwd(1200px) {
+    padding: rem(40px) 0;
+
+    img {
+      margin-bottom: 0;
+    }
+
+    &--right {
+      img {
+        transform: translateX(50px);
+      }
+    }
+
+    &--left {
+      img {
+        transform: translateX(-50px);
+      }
+    }
+  }
+}
+
+.text-box .text-box__content {
+  padding: 0 rem(30px);
+
+  @include rwd(tablet-up) {
+    padding: 0;
+  }
+}
+
+.text-box__subtitle {
+  margin-top: rem(-10px);
+  margin-bottom: rem(25px);
+  font-weight: $font-bold;
+}

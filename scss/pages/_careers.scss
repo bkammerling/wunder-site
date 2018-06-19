@@ -1,0 +1,36 @@
+.careers {
+  .picture-slider__wrapper {
+    margin-top: rem(50px);
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .icons-text {
+    padding-bottom: rem(30px);
+  }
+
+  .picture-slider .slick-dots {
+    .slick-active button::before {
+      background: $olive-matt;
+    }
+
+    button::before {
+      background: rgba($olive-matt, 0.3);
+    }
+  }
+
+  .picture-slider__background img {
+    @include rwd(wide-up) {
+      min-width: 70%;
+    }
+  }
+
+  .video-banner {
+    background: url("../video/team.jpg") bottom center no-repeat;
+    @include rwd(tablet-up) {
+      background: none;
+    }
+  }
+}

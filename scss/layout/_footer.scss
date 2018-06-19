@@ -1,0 +1,146 @@
+.footer {
+  background: $olive-matt;
+  padding: rem(80px) rem(30px) rem(40px);
+  clear: both;
+
+  a {
+    color: $white;
+    font-weight: $font-bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h4 {
+    margin-bottom: rem(10px);    
+    color: #647378;
+  }
+
+  ul {
+    margin-bottom: rem(30px);
+  }
+
+  li {
+    padding: rem(9px) 0;
+    
+    p {
+      color: $white;    
+      font-size: rem(16px);
+      line-height: 1.5;
+    }
+
+    .subtitle {
+      display: block;
+      font-size: rem(16px);
+      color: #647378;
+      font-weight: $font-regular;
+      line-height: 1;
+    }
+  }
+
+  @include rwd(tablet-up ) {
+    a {
+      font-size: rem(11px);      
+    }
+
+    li {
+      padding: rem(4px) 0;
+
+      p {
+        font-size: rem(11px);
+      }
+
+      .subtitle {
+        font-size: rem(10px);
+      }
+    }
+  }
+}
+
+.footer__wrapper {
+  flex-direction: column;  
+
+  @include rwd(tablet-up) {
+    flex-direction: row;
+  }
+}
+
+.footer__logotype {
+  margin-bottom: rem(40px);
+}
+
+.footer__bottom {
+  color: $olive-light;
+  margin-right: -15px;
+  margin-left: -15px;
+  font-size: rem(14px);
+
+  ul {
+    margin-top: rem(20px);
+  }
+
+  li:first-child {
+    margin-bottom: rem(30px);
+  }
+
+  a {
+    color: $olive-light;
+    font-weight: $font-regular;
+  }
+
+  @include rwd(tablet-up ) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    font-size: rem(10px);
+
+    li {
+      display: inline-block;
+      padding: 0 rem(30px);
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+.footer__buttons {
+  li:first-child {
+    padding-top: 0;
+  }
+
+  .btn--blue {
+    display: block;
+    margin-bottom: rem(10px);
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+ul.footer__socialmedia {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(10px); 
+
+  li {
+    padding-right: rem(20px);
+  }
+
+  img {
+    height: 22px;
+  }
+
+  @include rwd(tablet-up) {
+    img {
+      height: 15px;
+    }
+  }
+}

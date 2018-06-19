@@ -1,0 +1,36 @@
+{
+  "name": "gulp-starter-env",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "imagesloaded": "^4.1.4",
+    "jquery": "^3.3.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cached": "^1.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inject-partials": "^1.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-minify-html": "^1.0.5",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-sass-lint": "^1.1.1",
+    "gulp-size": "^2.0.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "imagemin-pngquant": "^4.2.0",
+    "jshint": "^2.9.1",
+    "mocha": "^3.4.1"
+  }
+}

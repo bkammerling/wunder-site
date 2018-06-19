@@ -1,0 +1,92 @@
+.solutions {
+  .video-banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: rem(80px) 0;
+
+    @include rwd(tablet-up) {
+      padding: rem(160px) 0;
+    }
+  }
+
+  &--shuttle {
+    .video-banner {
+      background-image: url(../img/banner-shuttle.jpg);
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(../img/banner-shuttle@2x.jpg);
+      }
+    }
+  }
+
+  &--fleet {
+    .video-banner {
+      background-image: url(../img/banner-fleet.jpg);
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(../img/banner-fleet@2x.jpg);
+      }
+    }
+  }
+
+  &--carpool {
+    .video-banner {
+      background-image: url(../img/banner-carpool.jpg);
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(../img/banner-carpool@2x.jpg);
+      }
+    }
+
+    .text-box {
+      margin-bottom: rem(80px);
+    }
+
+    .text-box__content {
+      padding-bottom: rem(20px);
+    }
+  }
+
+  .video-banner__title {
+    font-weight: $font-regular;
+    text-align: center;
+
+    strong {
+      font-weight: $font-black;
+    }
+  }
+
+  .simple-slider__image {
+    margin-bottom: rem(30px);
+  }
+  .simple-slider--process {
+    .simple-slider__image {
+
+      @include rwd(tablet-up) {
+        margin-right: 6.5rem;
+      }
+    }
+  }
+
+  .about-wunder__blocks {
+
+    @include rwd(tablet-up) {
+      bottom: initial;
+      top: calc(100% - 70px);
+      position: absolute;
+      width: 80%;
+      left: 10%;
+    }
+  }
+
+  .about-wunder__block {
+    padding: rem(25px) rem(15px);
+
+    @include rwd(tablet-up) {
+      padding: rem(25px) rem(35px);
+      max-width: 175px;
+      width: 100%;
+    }
+  }
+}

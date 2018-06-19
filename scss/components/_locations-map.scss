@@ -1,0 +1,47 @@
+.locations-map {
+  display: none;
+
+  @include rwd(tablet-up) {
+    display: block;
+    
+    h3 {        
+      padding: 0 0 0 rem(40px);
+      position: relative;    
+      text-align: left;   
+      font-size: rem(20px);
+  
+      &::before {
+        content: '';
+        display: inline-block;
+        width: rem(24px);
+        height: rem(36px);
+        background-image: url('../img/icon-banner-arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: rem(0px);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+  
+      @include rwd(tablet-up) {
+        max-width: rem(650px);
+      }
+    }
+  
+    h3,
+    p {
+      position: relative;
+      z-index: 2;
+    }
+  
+    img {
+      transform: translateY(-80px);
+      max-width: 100%;
+    }
+  }
+}
+
+.locations-map__content {
+  margin: rem(60px) rem(30px) rem(10px) 15%;
+}

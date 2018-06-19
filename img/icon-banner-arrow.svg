@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="16px" viewBox="0 0 11 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wunder_landingpage_mobile_01" transform="translate(-39.000000, -218.000000)" fill="#04DE47">
+            <g id="Header-Image" transform="translate(0.000000, 75.000000)">
+                <g id="Claim" transform="translate(39.000000, 108.000000)">
+                    <path d="M5.5,41.7131842 L8.4487451,38.7774018 C9.48960574,37.7411168 11.1780162,37.7406744 12.2191435,38.7772248 C13.2604484,39.8139522 13.2601818,41.4943211 12.2189657,42.53096 L7.50661204,47.2225982 C6.9552414,47.7714982 6.22224311,48.0297806 5.5,47.9972747 C4.77775689,48.0297806 4.0447586,47.7714982 3.49338796,47.2225982 L-1.21896573,42.53096 C-2.26018183,41.4943211 -2.26044842,39.8139522 -1.21914346,38.7772248 C-0.178016232,37.7406744 1.51039426,37.7411168 2.5512549,38.7774018 L5.5,41.7131842 Z" id="Combined-Shape" transform="translate(5.500000, 43.000000) rotate(-90.000000) translate(-5.500000, -43.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

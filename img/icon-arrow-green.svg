@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wunder_pricing" transform="translate(-284.000000, -1944.000000)" fill="#04DE47">
+            <g id="2-Million-Rides" transform="translate(270.000000, 1878.000000)">
+                <g id="Base-Features">
+                    <g id="Group-29" transform="translate(14.000000, 56.000000)">
+                        <path d="M4,14.9705474 L6.35899608,12.6219214 C7.19168459,11.7928934 8.54241299,11.7925395 9.37531477,12.6217799 C10.2083587,13.4511618 10.2081455,14.7954569 9.37517259,15.624768 L5.60528963,19.3780786 C5.16419312,19.8171985 4.57779449,20.0238245 4,19.9978198 C3.42220551,20.0238245 2.83580688,19.8171985 2.39471037,19.3780786 L-1.37517259,15.624768 C-2.20814546,14.7954569 -2.20835873,13.4511618 -1.37531477,12.6217799 C-0.542412986,11.7925395 0.80831541,11.7928934 1.64100392,12.6219214 L4,14.9705474 Z" id="Combined-Shape" transform="translate(4.000000, 16.000000) rotate(-90.000000) translate(-4.000000, -16.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

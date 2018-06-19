@@ -1,0 +1,117 @@
+.profiles {
+  margin: rem(40px) 0;
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: rem(30px);
+  }
+
+  @include rwd(tablet-up) {
+    margin: rem(120px) 0;
+  }
+}
+
+.profiles__wrapper {
+  width: 100%;
+  padding: rem(0px) 0 rem(10px);
+  float: right;
+
+  @include rwd(tablet-up) {
+    padding: rem(0px) rem(40px) rem(10px);
+  }
+
+  @include rwd(desktop-up) {
+    background: $grey-light;
+    max-width: 65%;
+    padding: rem(20px) rem(40px) rem(10px) rem(125px);
+  }
+  
+  @include rwd(wide-up) {
+    transform: translateX(120px);
+    max-width: 80%;
+  }
+}
+
+.profiles__speaker {
+  position: relative;
+  padding-top: rem(25px);
+  padding-bottom: rem(25px);
+
+  h2 {
+    margin-top: rem(30px);
+
+    span {
+      font-weight: $font-regular;
+    }
+  }
+
+  @include rwd(tablet-up) {
+    padding-top: rem(50px);
+    padding-bottom: rem(50px);
+  }
+}
+
+.profiles__role {
+  font-size: rem(18px);
+  color: $olive;
+  font-weight: $font-bold;
+  letter-spacing: 1px;
+  padding: rem(5px) 0 rem(25px);
+
+  &::after {
+    content: '';
+    display: block;
+    width: rem(50px);
+    height: rem(4px);
+    background: $olive;
+    margin-top: rem(15px);
+  }
+}
+
+.profiles__description {
+  p {
+    padding-bottom: rem(15px);
+  }
+
+  @include rwd(tablet-up) {
+    p {
+      padding-bottom: rem(40px);
+    }
+  }
+}
+
+.profiles__image {
+  position: relative;
+  display: inline;  
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    position: absolute;
+    bottom: rem(-15px);
+    right: rem(-5px);
+  }
+
+  @include rwd(desktop-up) {
+    position: absolute;
+    right: calc(100% + 40px);
+    top: rem(65px);
+    width: rem(400px);
+
+    a {
+      right: rem(-15px);
+    }
+  }
+
+  @include rwd(wide-up) {
+    right: calc(100% + 60px);
+  }
+}

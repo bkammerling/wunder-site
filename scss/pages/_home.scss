@@ -1,0 +1,10 @@
+.app {
+  .video-banner {
+    background: url("../video/app.jpg") bottom center no-repeat;
+    background-size: cover;
+
+    @include rwd(tablet-up) {
+      background: none;
+    }
+  }
+}

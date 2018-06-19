@@ -1,0 +1,10 @@
+.meetup {
+  .video-banner {
+    background: url("../video/wunder-meetup.jpg") bottom center no-repeat;
+    background-size: cover;
+
+    @include rwd(tablet-up) {
+      background: none;
+    }
+  }
+}

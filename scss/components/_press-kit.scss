@@ -1,0 +1,43 @@
+.press-kit {
+  background: $grey-light;
+  text-align: center;
+  padding: rem(40px) 0;
+
+  a {
+    font-size: rem(20px);
+    color: $sky-blue;
+    font-weight: $font-black;    
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    margin-bottom: rem(30px);
+  }
+
+  @include rwd(tablet-up) {
+    padding: rem(100px) 0;
+
+    h3 {
+      margin-bottom: rem(80px);
+    }
+  }
+}
+
+.press-kit__item {
+  margin-bottom: rem(30px);
+}
+
+.press-kit__title {
+  font-size: rem(30px);
+  font-weight: $font-black;
+  color: $olive;
+  margin-bottom: rem(15px);
+}
+
+.press-kit__description {
+  color: $olive-light;
+  margin-bottom: rem(15px);
+}
