@@ -93,3 +93,42 @@ var lazyLoadingImages = function () {
 }
 
 lazyLoadingImages();
+
+var form = {
+  init: function() {
+    $("#form-submit").click(function(event)  {
+      if(!$('form#main-contact')[0].reportValidity()) return false;
+      var body = "This message was sent from a contact form on wunder.org." + '\n\n',
+          subject = "Message from website contact form";
+      $("form#main-contact").find("input[name], textarea[name]").each(function (index, node) {
+        body += node.name.toUpperCase() + ": " + node.value + '\n\n';
+      });
+      form.submit(subject, body);
+    });
+  },
+  submit: function(subject, body) {
+    var submitBtn = $("#form-submit");
+    submitBtn.attr("disabled", true);
+    var awsURL = "https://1bnwg71zz1.execute-api.us-west-2.amazonaws.com/production/submit";
+    $.ajax({
+      method: "POST",
+      url: awsURL,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      data: JSON.stringify({
+        "subject":subject,
+        "body":body
+      })
+    }).done(function (data) {
+      $(".form-feedback").removeClass('invisible');
+      $('form#main-contact').trigger("reset");
+      submitBtn.attr("disabled", false);
+    }).fail(function (error) {
+      $(".form-feedback").removeClass('invisible').text('There was a problem sending your message, please try again or send us an email.');
+    });
+  }
+};
+
+form.init();

@@ -28,9 +28,20 @@
     padding: rem(30px) 0;
   }
 
-  .btn { 
+  .btn {
     display: block;
-    width: 100%;    
+    width: 100%;
+    &:disabled {
+      opacity: 0.4;
+      cursor: progress;
+    }
+  }
+
+  .form-feedback {
+    text-align: center;
+    margin: 2rem 0 0;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
   }
 
   @include rwd(tablet-up) {

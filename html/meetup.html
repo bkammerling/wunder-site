@@ -3,9 +3,19 @@
 <body data-menu="2">
   {% include partials/global/_header.html %}
   <main class="meetup">
-    {% include partials/banner/_banner-meetup.html %} {% include partials/icons-text/_icons-text-meetup.html %} {% include partials/slider/_meetup-slider.html
-    %} {% include partials/profiles/_upcoming-speakers.html %} {% include partials/_sponsors.html %} {% include partials/profiles/_profiles-masonry.html
-    %} {% include partials/_participants.html %} {% include partials/_contact-form.html %}
+    {% include partials/banner/_banner-meetup.html %}
+    {% include partials/icons-text/_icons-text-meetup.html %}
+    {% include partials/slider/_meetup-slider.html %}
+
+    <div class="container">
+      <div class="responsive-video">
+        <iframe src="https://player.vimeo.com/video/246079657?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+    </div>
+
+    {% include partials/profiles/_profiles-masonry.html %}
+    {% include partials/_participants.html %} {% include partials/_sponsors.html %} {% include partials/_contact-form.html %}
   </main>
   {% include partials/global/_footer.html %} {% include partials/global/_foot.html %}
 </body>

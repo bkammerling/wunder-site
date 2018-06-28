@@ -17,7 +17,9 @@ var gulp = require("gulp"),
   notify = require("gulp-notify"),
   injectPartials = require("gulp-inject-partials"),
   useref = require("gulp-useref"),
-  replace = require('gulp-replace');
+  replace = require('gulp-replace'),
+  dom  = require('gulp-dom'),
+  gutil = require('gulp-util');
 
 gulp.task("scss", function() {
   var onError = function(err) {
@@ -68,7 +70,7 @@ gulp.task("scss-lint", function() {
     .pipe(scsslint());
 });
 
-gulp.task("minify-html", function() {
+gulp.task("minify-html", ["html-strip"], function() {
   var opts = {
     comments: true,
     spare: true
@@ -78,6 +80,10 @@ gulp.task("minify-html", function() {
     .src("./dist/*.html")
     .pipe(minifyHTML(opts))
     .pipe(gulp.dest("dist/"))
+    .pipe(rename({
+      extname: ""
+    }))
+    .pipe(gulp.dest("./dist"))
     .pipe(reload({ stream: true }));
 });
 
@@ -87,6 +93,16 @@ gulp.task("min-js", function() {
     .pipe(uglify())
     .pipe(gulp.dest("dist/js"));
 });
+
+
+gulp.task("min-js-error", function() {
+    gulp
+      .src("dist/js/*.js")
+      .pipe(uglify())
+      .on('error', function(err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+      .pipe(gulp.dest("dist/js"));
+});
+
 
 gulp.task("jshint", function() {
   gulp
@@ -140,17 +156,25 @@ gulp.task("index", function() {
       })
     )
     .pipe(reload({ stream: true }))
-    .pipe(gulp.dest("./dist"))
-    .pipe(rename({
-      extname: ""
-    }))
     .pipe(gulp.dest("./dist"));
 });
 
+
 gulp.task("html-strip", function() {
   return gulp
-    .src("html/partials/global/*.html")
-    .pipe(replace('.html', ''))
+    .src("./dist/*.html")
+    .pipe(dom(function(){
+        var links = this.querySelectorAll('header.header a, footer.footer a');
+        [...links].forEach(function(link) {
+          var url = link.getAttribute("href");
+          if(url) {
+            var newUrl = url.replace('.html', '');
+            link.setAttribute('href', newUrl);
+          }
+        });
+        return this;
+    }))
+    .pipe(gulp.dest("./dist"));
 });
 
 

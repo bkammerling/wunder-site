@@ -25,9 +25,18 @@ html, body {
   text-align: center;
 }
 
+.invisible {
+  opacity: 0 !important;
+}
+
 .responsive-video {
   padding: 56.25% 0 0 0;
   position: relative;
+  margin: 3em 0 0;
+
+  @include rwd(tablet-up) {
+    margin: 5rem 0;
+  }
 
   iframe {
     position:absolute;

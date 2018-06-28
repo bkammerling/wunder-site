@@ -7,7 +7,7 @@
 .privacy {
   h2 {
     margin-top: rem(30px);
-  }   
+  }
 
   p {
     padding-bottom: rem(20px);
@@ -18,8 +18,17 @@
   h2 {
     margin-top: rem(30px);
   }
-   
+
   p {
     padding-bottom: rem(20px);
+  }
+}
+
+.error {
+  h1 {
+    margin: 2rem 0;
+    &.lg {
+      font-size: 4.5rem;
+    }
   }
 }
