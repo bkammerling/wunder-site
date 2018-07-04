@@ -58,9 +58,9 @@ slider.init(".simple-slider", {
   dots: true,
   lazyLoad: 'ondemand',
   prevArrow:
-    '<span class="slider__arrow slider__arrow--prev"><img src="./img/slider-arrow.svg" alt="Prev"/></span>',
+    '<span class="slider__arrow slider__arrow--prev"><img src="/img/slider-arrow.svg" alt="Prev"/></span>',
   nextArrow:
-    '<span class="slider__arrow slider__arrow--next"><img src="./img/slider-arrow.svg" alt="Next"/></span>',
+    '<span class="slider__arrow slider__arrow--next"><img src="/img/slider-arrow.svg" alt="Next"/></span>',
     adaptiveHeight: false,
     responsive: [
       {
@@ -76,9 +76,9 @@ slider.init(".picture-slider", {
   dots: true,
   lazyLoad: 'ondemand',
   prevArrow:
-    '<span class="slider__arrow slider__arrow--prev"><img src="./img/slider-arrow.svg" alt="Prev"/></span>',
+    '<span class="slider__arrow slider__arrow--prev"><img src="/img/slider-arrow.svg" alt="Prev"/></span>',
   nextArrow:
-    '<span class="slider__arrow slider__arrow--next"><img src="./img/slider-arrow.svg" alt="Next"/></span>'
+    '<span class="slider__arrow slider__arrow--next"><img src="/img/slider-arrow.svg" alt="Next"/></span>'
 });
 
 menu.init();

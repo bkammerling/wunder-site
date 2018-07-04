@@ -77,7 +77,7 @@ gulp.task("minify-html", ["html-strip"], function() {
   };
 
   gulp
-    .src("./dist/*.html")
+    .src("./dist/**/**.html")
     .pipe(minifyHTML(opts))
     .pipe(gulp.dest("dist/"))
     .pipe(rename({
@@ -142,7 +142,7 @@ gulp.task("fonts", function() {
 
 gulp.task("index", function() {
   return gulp
-    .src("html/*.html")
+    .src("html/**/*.html")
     .pipe(
       injectPartials({
         removeTags: true,
