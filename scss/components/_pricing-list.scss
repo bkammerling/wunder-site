@@ -7,7 +7,7 @@
 
   @include rwd(tablet-up) {
     margin-bottom: rem(80px);
-    
+
     & > h3 {
       text-align: center;
       margin-top: rem(90px);
@@ -38,22 +38,22 @@
   background: $white;
   border-radius: rem(5px);
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-  margin: 0 rem(15px);
+  margin: 0 0;
   overflow: hidden;
-  
+
 
   h3 {
     color: $sky-blue;
     font-size: rem(20px);
     text-align: center;
     padding: rem(40px) rem(20px);
-    
+
   }
 
   img {
     margin: auto;
-    display: block;  
-    height: 130px;  
+    display: block;
+    height: 130px;
   }
 
   hr {
@@ -107,7 +107,7 @@
     color: $sky-blue;
     font-weight: $font-bold;
     display: inline-block;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -125,7 +125,7 @@
   background: $sky-blue;
   padding: rem(20px) rem(15px);
   margin-top: rem(25px);
-  
+
   span {
     font-size: rem(20px);
     color: rgba(0, 0, 0, 0.3);

@@ -142,7 +142,7 @@ gulp.task("fonts", function() {
 
 gulp.task("index", function() {
   return gulp
-    .src("html/**/*.html")
+    .src(["html/**/*.html","!/**/partials/**/*"])
     .pipe(
       injectPartials({
         removeTags: true,
@@ -162,7 +162,7 @@ gulp.task("index", function() {
 
 gulp.task("html-strip", function() {
   return gulp
-    .src("./dist/*.html")
+    .src("./dist/**/*.html")
     .pipe(dom(function(){
         var links = this.querySelectorAll('header.header a, footer.footer a');
         [...links].forEach(function(link) {
