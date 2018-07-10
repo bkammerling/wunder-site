@@ -55,3 +55,10 @@ img {
 img[data-src] {
   opacity: 0;
 }
+
+body.en .de {
+  display: none;
+}
+body.de .en {
+  display: none;
+}

@@ -106,10 +106,12 @@ var form = {
       form.submit(subject, body);
     });
   },
+
   submit: function(subject, body) {
     var submitBtn = $("#form-submit");
     submitBtn.attr("disabled", true);
     var awsURL = "https://1bnwg71zz1.execute-api.us-west-2.amazonaws.com/production/submit";
+
     $.ajax({
       method: "POST",
       url: awsURL,
@@ -129,6 +131,56 @@ var form = {
       $(".form-feedback").removeClass('invisible').text('There was a problem sending your message, please try again or send us an email.');
     });
   }
+
 };
 
 form.init();
+
+var jobs = {
+  init: function() {
+    var currentJobsHtml;
+    $.ajax({
+      method: "GET",
+      url: "https://boards-api.greenhouse.io/v1/boards/wunder/jobs?content=true"
+    }).done(function (data) {
+      currentJobsHtml = jobs.build(data.jobs);
+    }).fail(function(error) {
+      currentJobsHtml = '<p>Could not  connect with job board. Find our open positions <a href="https://boards.greenhouse.io/wunder/" target="_blank">here</a>.</p>';
+    }).always(function() {
+      $(".career-jobs__wrapper").append(currentJobsHtml);
+    });
+  },
+
+  build: function(data) {
+    if(data.length < 1) return '<p>No positions currently available.</p>';
+    var sortedJobs = jobs.sort(data);
+    var jobsHtml = "";
+    for(var i = 0; i < sortedJobs.length; i++) {
+      var job = sortedJobs[i]
+      if(i==0) {
+        jobsHtml += "<ul class=career-jobs__list><li>" + job.departments[0].name + "</li>"
+      } else if(job.departments[0].name !== sortedJobs[i-1].departments[0].name) {
+        jobsHtml += "</ul><ul class=career-jobs__list><li>" + job.departments[0].name + "</li>"
+      }
+      jobsHtml += "<li><a href=" + job.absolute_url + ">" + job.title + "</a></li>"
+      if(i==sortedJobs.length) {
+        console.log('last');
+        jobsHtml += "</ul>";
+      }
+    } // end of for loop
+    return jobsHtml;
+  },
+
+  sort: function(array) {
+    array.sort(function(a,b) {
+      var depA = a.departments[0].name;
+      var depB = b.departments[0].name;
+      if (depA < depB) return -1;
+      if (depA > depB) return 1;
+      return 0;
+    });
+    return array;
+  }
+};
+
+if($("body").data("menu") == 3) jobs.init();

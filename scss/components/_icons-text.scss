@@ -13,6 +13,7 @@
   margin-bottom: rem(70px);
 
   img {
+    max-height: 141px;
     margin-bottom: rem(25px);
   }
 
@@ -20,7 +21,7 @@
     margin-bottom: rem(15px);
   }
 
-  &:last-child {    
+  &:last-child {
     margin-bottom: 0;
   }
 }
@@ -30,7 +31,7 @@
 }
 
 .icons-text__description {
-  text-align: left;  
+  text-align: left;
 
   h2 {
     font-size: rem(24px);
