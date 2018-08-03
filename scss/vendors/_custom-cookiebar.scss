@@ -1,0 +1,16 @@
+body .cc-window.cc-banner {
+  padding: 0.5em 1em;
+}
+
+body .cc-theme-classic .cc-btn {
+  border-radius: 2px;
+  padding: 0;
+  &:hover {
+    background: #0588c1;
+  }
+}
+
+.cc-banner .cc-message {
+  font-size: 13px;
+  line-height: 1.2;
+}
