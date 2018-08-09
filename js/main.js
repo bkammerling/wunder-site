@@ -100,14 +100,16 @@ var form = {
       if(!$('form#main-contact')[0].reportValidity()) return false;
       var body = "This message was sent from a contact form on wunder.org." + '\n\n',
           subject = "Message from website contact form";
-      $("form#main-contact").find("input[name], textarea[name]").each(function (index, node) {
+      $("form#main-contact").find("input[name], select[name], textarea[name]").each(function (index, node) {
         body += node.name.toUpperCase() + ": " + node.value + '\n\n';
       });
-      form.submit(subject, body);
+      const name = $("input#name").val();
+      const email = $("input#email").val();
+      form.submit(subject, body, name, email);
     });
   },
 
-  submit: function(subject, body) {
+  submit: function(subject, body, name, email) {
     var submitBtn = $("#form-submit");
     submitBtn.attr("disabled", true);
     var awsURL = "https://1bnwg71zz1.execute-api.us-west-2.amazonaws.com/production/submit";
@@ -121,11 +123,15 @@ var form = {
       },
       data: JSON.stringify({
         "subject":subject,
-        "body":body
+        "body":body,
+        "toEmail": "benjamin@wunder.org",
+        "name": name,
+        "fromEmail": email
       })
     }).done(function (data) {
       $(".form-feedback").removeClass('invisible');
       $('form#main-contact').trigger("reset");
+      console.log(data);
       submitBtn.attr("disabled", false);
     }).fail(function (error) {
       $(".form-feedback").removeClass('invisible').text('There was a problem sending your message, please try again or send us an email.');
