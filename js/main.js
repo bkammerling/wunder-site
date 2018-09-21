@@ -10,10 +10,14 @@ var menu = {
     var menu = $(".header__nav");
     var languageBtn = $("#js-language");
     var solutionsBtn = $("#js-solutions");
+    var eventsBtn = $("#js-events");
+    var appBtn = $("#js-app");
     this.activeItem();
     this.toggleMenu(btn, menu);
     this.dropdown(languageBtn);
     this.dropdown(solutionsBtn);
+    this.dropdown(eventsBtn);
+    this.dropdown(appBtn);
   },
 
   activeItem: function () {

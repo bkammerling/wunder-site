@@ -18,7 +18,7 @@
   text-transform: uppercase;
   width: 100%;
   text-align: center;
-  
+
   @include rwd(tablet-up) {
     padding-right: rem(15px);
     max-width: rem(200px);
@@ -33,11 +33,11 @@
 
   li {
     width: 33.333%;
-    padding: rem(15px) rem(25px);   
-    text-align: center; 
+    padding: rem(15px) rem(25px);
+    text-align: center;
   }
-  
-  img {    
+
+  img {
     object-fit: contain;
     max-width: 100%;
     width: 100%;
@@ -64,7 +64,7 @@
     li {
       width: initial;
       flex-basis: initial !important;
-      padding: 0;      
+      padding: 0;
     }
 
     img {

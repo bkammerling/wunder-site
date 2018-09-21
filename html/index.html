@@ -1,41 +1,23 @@
-<script type="text/javascript">
-var userLang = navigator.language || navigator.userLanguage;
-var currentURL = window.location.href;
-/*switch (userLang) {
-  case "de":
-    window.location.replace(currentURL+"de/");
-    break;
-  case "de-DE":
-    window.location.replace(currentURL+"de/");
-    break;
-  case "pt-BR":
-    window.location.replace(currentURL+"pt/");
-    break;
-  case "pt":
-    window.location.replace(currentURL+"pt/");
-    break;
-  default:
-    //stick with english site
-}*/
-</script>
 {% include partials/global/_head.html %}
-<body class="en" data-menu="0">
-  {% include partials/global/_header.html %}
-  <main class="app">
-    {% include partials/banner/_banner.html %}
-    {% include partials/icons-text/_icons-text.html %}
-    {% include partials/slider/_phone-slider.html %}
-    {% include partials/slider/_testimonial-slider.html %}
-    <div class="press-logotypes container">
-      <h3>Press</h3>
-      <picture>
-        <source media="(max-width: 768px)" data-srcset="./img/press-logotypes-mobile.jpg 1x, ./img/press-logotypes-mobile@2x.jpg 2x" class="lazyload"></source>
-        <img data-src="./img/press-logotypes.jpg" data-srcset="./img/press-logotypes@2x.jpg 2x" alt="Press Logotypes" class="lazyload">
-      </picture>
-      <a href="./press.html">View all Press Mentions</a>
-    </div>
-  </main>
-  {% include partials/global/_footer.html %}
-  {% include partials/global/_foot.html %}
+
+<body class="en">
+    {% include partials/global/_header.html %}
+    <main class="overview">
+        {% include partials/banner/_banner.html %}
+        {% include partials/_client-list.html %}
+        {% include partials/_locations-map.html %}
+        {% include partials/slider/_shuttle-process-slider.html %}
+        {% include partials/shuttle-options/_shuttle-options--overview.html %}
+        <div class="container press-logotypes">
+            <picture>
+                <source media="(max-width: 768px)" data-srcset="./img/press-logotypes-2-mobile.jpg 1x, ./img/press-logotypes-2-mobile@2x.jpg 2x" class="lazyload"></source>
+                <img data-src="./img/press-logotypes-2.jpg" data-srcset="./img/press-logotypes-2@2x.jpg 2x" alt="Press Logotypes" class="lazyload">
+            </picture>
+        </div>
+        {% include partials/_contact-form.html %}
+    </main>
+    {% include partials/global/_footer.html %}
+    {% include partials/global/_foot.html %}
 </body>
+
 </html>
