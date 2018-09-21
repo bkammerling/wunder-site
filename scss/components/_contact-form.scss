@@ -77,6 +77,9 @@
 
     textarea {
       height: 100%;
+      body[data-menu="0"] & {
+        height: 16rem;
+      }
     }
 
     .btn {

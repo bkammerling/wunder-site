@@ -6,9 +6,9 @@
     color: $grey-heading;
     margin: rem(60px) rem(30px) rem(60px) rem(15px);
     padding: 0 0 0 rem(40px);
-    position: relative;    
-    text-align: left;   
-    font-size: rem(20px);     
+    position: relative;
+    text-align: left;
+    font-size: rem(20px);
 
     &::before {
       content: '';
@@ -42,7 +42,7 @@
     color: $sky-blue;
     font-size: rem(20px);
     font-weight: $font-black;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -57,7 +57,7 @@
     color: $white;
     font-weight: $font-bold;
     text-decoration: none;
-    
+
     &:hover {
       text-decoration: none;
     }
@@ -79,6 +79,7 @@
 
     @include rwd(tablet-up) {
       display: block;
+      max-width: 100%;
     }
   }
 }

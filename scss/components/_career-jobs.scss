@@ -46,5 +46,6 @@
     @include rwd(tablet-up) {
         margin-bottom: 3rem;
         flex-basis: 33.333%;
+        padding-right: 1.4rem;
     }
 }

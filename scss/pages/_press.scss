@@ -5,4 +5,56 @@
       background: none;
     }
   }
+
+  .press-contact {
+    display: block;
+    margin-bottom: 1rem;
+
+    .press-contact__container {
+      text-align: center;
+      @include rwd(tablet-up) {
+        text-align: left;
+      }
+    }
+
+    .press-contact__image img {
+      max-width: 205px;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 1rem;
+      @include rwd(tablet-up) {
+        margin-bottom: 0;
+      }
+    }
+
+    .press-contact__text {
+
+      h2 {
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      @include rwd(tablet-up) {
+        position: absolute;
+        top: 50%;
+        left: 27%;
+        transform: translateY(-50%);
+        max-width: 37.5rem;
+        padding: 3.75rem 6rem 3.75rem 5rem;
+        z-index:1;
+        background: #33B0EF;
+        p, a, h2 {
+          color: #FFFFFF;
+        }
+        h2 {
+          margin: 1rem 0;
+        }
+      }
+      @include rwd(desktop-up) {
+        padding: 3.75rem 11rem 3.75rem 4rem;
+      }
+    }
+
+  }
+
 }
