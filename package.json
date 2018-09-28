@@ -10,11 +10,12 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^2.24.6",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.6.0",
+    "gulp-dom": "^0.9.17",
     "gulp-imagemin": "^2.4.0",
     "gulp-inject-partials": "^1.0.2",
     "gulp-jshint": "^2.0.0",
@@ -22,16 +23,15 @@
     "gulp-minify-html": "^1.0.5",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^2.1.1",
     "gulp-sass-lint": "^1.1.1",
     "gulp-size": "^2.0.0",
     "gulp-uglify": "^2.1.2",
     "gulp-useref": "^3.1.2",
-    "gulp-dom": "^0.9.17",
     "imagemin-pngquant": "^4.2.0",
-    "jshint": "^2.9.1",
-    "mocha": "^3.4.1"
+    "jshint": "^2.9.6",
+    "mocha": "^5.2.0"
   }
 }
