@@ -1,0 +1,24 @@
+{% include partials/global/_head.html %}
+
+<body class="de" data-menu="0" data-submenu="2">
+    {% include partials/global/_header.html %}
+    <main class="solutions solutions--carpool">
+        {% include partials/banner/_banner-carpool.html %}
+        {% include partials/_client-list.html %}
+        {% include partials/icons-text/_icons-text-carpool.html %}
+        {% include partials/slider/_carpool-slider.html %}
+        {% include partials/text-boxes/_text-boxes-carpool.html %}
+        <div class="container video text-center">
+            <h3>Mitfahrgelegenheiten erklärt</h3>
+            <div class="responsive-video">
+                <iframe src="https://player.vimeo.com/video/206549984?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        {% include partials/_contact-form.html %}
+    </main>
+    {% include partials/global/_footer.html %}
+    {% include partials/global/_foot.html %}
+</body>
+
+</html>

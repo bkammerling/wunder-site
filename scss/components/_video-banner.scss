@@ -48,6 +48,13 @@
 }
 
 .video-banner__title {
+  .overview & {
+    font-weight: $font-regular;
+    text-align: center;
+    strong {
+      font-weight: $font-black;
+    }
+  }
   span {
     display: block;
     opacity: 0.6;

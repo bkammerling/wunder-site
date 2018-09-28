@@ -2,7 +2,7 @@
   ::-webkit-input-placeholder {@content}
   :-moz-placeholder           {@content}
   ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}  
+  :-ms-input-placeholder      {@content}
 }
 
 @mixin rwd($point) {
@@ -15,7 +15,7 @@
     @media (min-width: $tablet) {
       @content;
     }
-  } 
+  }
   @else if $point == desktop-up {
     @media (min-width: $desktop) {
       @content;
@@ -83,7 +83,6 @@ $includeClasses: true !default;
 
 	@include hacks();
 	position: relative;
-	overflow: hidden;
 
 	&:before {
 		content: "";

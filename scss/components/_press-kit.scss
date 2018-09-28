@@ -6,7 +6,8 @@
   a {
     font-size: rem(20px);
     color: $sky-blue;
-    font-weight: $font-black;    
+    font-weight: $font-black;
+    display: block;
 
     &:hover {
       text-decoration: underline;
@@ -27,7 +28,7 @@
 }
 
 .press-kit__item {
-  margin-bottom: rem(30px);
+  margin-bottom: rem(50px);
 }
 
 .press-kit__title {
@@ -35,9 +36,13 @@
   font-weight: $font-black;
   color: $olive;
   margin-bottom: rem(15px);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e8e8e8;
+  display: inline-block;
 }
 
 .press-kit__description {
+  display:none;
   color: $olive-light;
   margin-bottom: rem(15px);
 }

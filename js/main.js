@@ -10,10 +10,14 @@ var menu = {
     var menu = $(".header__nav");
     var languageBtn = $("#js-language");
     var solutionsBtn = $("#js-solutions");
+    var eventsBtn = $("#js-events");
+    var appBtn = $("#js-app");
     this.activeItem();
     this.toggleMenu(btn, menu);
     this.dropdown(languageBtn);
     this.dropdown(solutionsBtn);
+    this.dropdown(eventsBtn);
+    this.dropdown(appBtn);
   },
 
   activeItem: function () {
@@ -189,4 +193,15 @@ var jobs = {
   }
 };
 
-if($("body").data("menu") == 3) jobs.init();
+if($("body").data("menu") == 4) jobs.init();
+
+var accordion = {
+  init: function() {
+    $('.accordion-title').click(function() {
+      $(this).parent().find('.accordion-content').slideToggle()
+      $(this).toggleClass('active');
+    })
+  }
+}
+
+if($("body").data("menu") == 6) accordion.init();
