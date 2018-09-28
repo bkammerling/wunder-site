@@ -3,16 +3,18 @@
 <body class="en">
     {% include partials/global/_header.html %}
     <main class="overview">
-        {% include partials/banner/_banner.html %}
+        {% include partials/banner/_banner-overview.html %}
         {% include partials/_client-list.html %}
+        {% include partials/shuttle-options/_shuttle-options--overview.html %}
         {% include partials/_locations-map.html %}
         {% include partials/slider/_shuttle-process-slider.html %}
-        {% include partials/shuttle-options/_shuttle-options--overview.html %}
-        <div class="container press-logotypes">
-            <picture>
-                <source media="(max-width: 768px)" data-srcset="./img/press-logotypes-2-mobile.jpg 1x, ./img/press-logotypes-2-mobile@2x.jpg 2x" class="lazyload"></source>
-                <img data-src="./img/press-logotypes-2.jpg" data-srcset="./img/press-logotypes-2@2x.jpg 2x" alt="Press Logotypes" class="lazyload">
-            </picture>
+        <div class="press-logotypes container">
+          <h3>Imprensa</h3>
+          <picture>
+            <source media="(max-width: 768px)" data-srcset="./img/press-logotypes-mobile.jpg 1x, ./img/press-logotypes-mobile@2x.jpg 2x" class="lazyload"></source>
+            <img data-src="./img/press-logotypes.jpg" data-srcset="./img/press-logotypes@2x.jpg 2x" alt="Press Logotypes" class="lazyload">
+          </picture>
+          <a href="./press.html">Ver todas as menções na imprensa</a>
         </div>
         {% include partials/_contact-form.html %}
     </main>

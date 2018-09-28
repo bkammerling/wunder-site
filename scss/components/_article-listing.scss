@@ -8,7 +8,7 @@
     color: $sky-blue;
     font-size: rem(16px);
     font-weight: $font-bold;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -23,6 +23,10 @@
   margin-bottom: rem(50px);
   text-align: center;
   align-items: center;
+
+  img {
+    max-width: 100%;
+  }
 
   @include rwd(tablet-up) {
     text-align: left;

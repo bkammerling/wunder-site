@@ -193,4 +193,15 @@ var jobs = {
   }
 };
 
-if($("body").data("menu") == 3) jobs.init();
+if($("body").data("menu") == 4) jobs.init();
+
+var accordion = {
+  init: function() {
+    $('.accordion-title').click(function() {
+      $(this).parent().find('.accordion-content').slideToggle()
+      $(this).toggleClass('active');
+    })
+  }
+}
+
+if($("body").data("menu") == 6) accordion.init();

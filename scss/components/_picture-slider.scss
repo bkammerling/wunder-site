@@ -1,10 +1,10 @@
 .picture-slider__wrapper {
-  
+
   h3 {
     color: $grey-heading;
     margin: rem(60px) 0 rem(40px) 0;
     padding: 0 0 0 rem(40px);
-    position: relative;            
+    position: relative;
 
     &::before {
       content: '';
@@ -22,16 +22,16 @@
   }
 
   @include rwd(tablet-up) {
-    margin-top: rem(160px);
+    /*margin-top: rem(160px);*/
   }
 }
 
 .picture-slider {
-  overflow: hidden;  
+  overflow: hidden;
   background: rgba($sky-blue, 1);
 
   &--green {
-    background: rgba($grass-green, 1);    
+    background: rgba($grass-green, 1);
   }
 
   @include rwd(tablet-up) {
@@ -127,7 +127,7 @@
       color: transparent;
       border: 0;
       outline: none;
-      background: transparent;         
+      background: transparent;
 
       &::before {
         content: '';
