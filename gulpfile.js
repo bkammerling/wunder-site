@@ -172,7 +172,7 @@ gulp.task("index", function() {
 });
 
 
-gulp.task("html-strip", function() {
+gulp.task("html-strip", ["index"], function() {
   return gulp
     .src("./dist/**/*.html")
     .pipe(dom(function(){
