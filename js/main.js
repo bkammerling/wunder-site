@@ -50,6 +50,7 @@ var menu = {
 
     btn.on("click", function() {
       $(this).toggleClass("is-active");
+      $(this).siblings().removeClass("is-active");
     });
 
     $("main").on("click", function() {
