@@ -207,7 +207,5 @@ gulp.task("build", [
   "videos",
   "index",
   "js",
-  "scss",
-  "min-js",
-  "minify-html"
+  "scss"
 ]);
