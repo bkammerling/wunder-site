@@ -19,7 +19,9 @@ var gulp = require("gulp"),
   useref = require("gulp-useref"),
   replace = require('gulp-replace'),
   dom  = require('gulp-dom'),
-  gutil = require('gulp-util');
+  gutil = require('gulp-util'),
+  version = require('gulp-version-number');
+;
 
 gulp.task("scss", function() {
   var onError = function(err) {
@@ -155,6 +157,16 @@ gulp.task("index", function() {
         searchPath: "./"
       })
     )
+    .pipe(version({
+      'value': '%TS%',
+      'append': {
+        'key': '_v',
+        'to': [
+          'js',
+          'css'
+        ]
+      }
+    }))
     .pipe(reload({ stream: true }))
     .pipe(gulp.dest("./dist"));
 });
@@ -189,3 +201,13 @@ gulp.task("default", [
   "watch"
 ]);
 gulp.task("prod", ["min-js", "minify-html"]);
+gulp.task("build", [
+  "imgmin",
+  "fonts",
+  "videos",
+  "index",
+  "js",
+  "scss",
+  "min-js",
+  "minify-html"
+]);
