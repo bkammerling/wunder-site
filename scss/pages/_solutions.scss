@@ -18,6 +18,7 @@
         background-image: url(../img/banner-shuttle@2x.jpg);
       }
     }
+
   }
 
   &--fleet {
@@ -39,13 +40,46 @@
       }
     }
 
-    .text-box {
-      margin-bottom: rem(80px);
+    .text-boxes.product {
+      padding-top: 0;
+    }
+
+    .feature {
+      padding: 0 2rem;
+    }
+
+    .video {
+      margin-top: rem(80px);
     }
 
     .text-box__content {
       padding-bottom: rem(20px);
     }
+  }
+
+  .feature {
+    padding: 0 2rem;
+    @include rwd(tablet-up) {
+      padding: 0;
+    }
+    img {
+      width: 29px;
+    }
+  }
+  .product {
+    .text-box {
+      padding: 0;
+      @include rwd(tablet-up) {
+        padding: 2.5rem 0;
+      }
+    }
+    .text-box__content {
+      padding: 3rem 2rem 0;
+      @include rwd(tablet-up) {
+        padding: 0 1.875rem;
+      }
+    }
+
   }
 
   .video-banner__title {
