@@ -23,11 +23,14 @@
 
   &--fleet {
     .video-banner {
-      background-image: url(../img/banner-fleet.jpg);
+      background-image: url(../img/amity-scooter.png);
 
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(../img/banner-fleet@2x.jpg);
+        background-image: url(../img/amity-scooter@2x.png);
       }
+    }
+    .video-banner__title {
+      color: $olive;
     }
   }
 
