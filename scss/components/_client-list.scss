@@ -20,7 +20,7 @@
   text-align: center;
 
   @include rwd(tablet-up) {
-    padding-right: rem(15px);
+    padding-right: rem(30px);
     max-width: rem(200px);
     text-align: right;
   }
