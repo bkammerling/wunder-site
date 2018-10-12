@@ -113,7 +113,7 @@ gulp.task("jshint", function() {
     .pipe(jshint.reporter("default"));
 });
 
-gulp.task("watch", function() {
+gulp.task("watch", ["imdex"], function() {
   gulp.watch("scss/**/*.scss", ["scss-lint", "scss"]);
   gulp.watch("js/*.js", ["jshint", "index", "js"]);
   gulp.watch("./**/*.html", ["index"]);
@@ -144,7 +144,7 @@ gulp.task("fonts", function() {
 
 gulp.task("index", function() {
   return gulp
-    .src(["html/**/*.html","!/**/partials/**/*"])
+    .src(["html/**/*.html","!/**/partials/**/*","html/_redirects"])
     .pipe(
       injectPartials({
         removeTags: true,
