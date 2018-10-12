@@ -2,6 +2,5 @@
 
 # Redirect with 301
 /terms          /terms-conditions   301
-/wms            https://wundermobilitysummit.splashthat.com/   301
 /termos-de-uso  /pt/terms-conditions    301
 /platform       /   301
