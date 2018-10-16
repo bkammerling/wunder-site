@@ -21,7 +21,7 @@ var gulp = require("gulp"),
   dom  = require('gulp-dom'),
   gutil = require('gulp-util'),
   version = require('gulp-version-number');
-;
+
 
 gulp.task("scss", function() {
   var onError = function(err) {
@@ -113,7 +113,7 @@ gulp.task("jshint", function() {
     .pipe(jshint.reporter("default"));
 });
 
-gulp.task("watch", ["imdex"], function() {
+gulp.task("watch", ["index"], function() {
   gulp.watch("scss/**/*.scss", ["scss-lint", "scss"]);
   gulp.watch("js/*.js", ["jshint", "index", "js"]);
   gulp.watch("./**/*.html", ["index"]);
