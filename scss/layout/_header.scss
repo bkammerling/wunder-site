@@ -12,7 +12,16 @@
 
 .header__logotype {
   flex-basis: 30%;
-  width: 144px;
+  width: 240px;
+  transition: width 0.4s;
+
+  @include rwd(tablet-up) {
+    width: 190px;
+  }
+  @include rwd(desktop-up) {
+    width: 240px;
+  }
+  
 }
 
 .header__icon {
