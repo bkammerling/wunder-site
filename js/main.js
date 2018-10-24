@@ -197,13 +197,32 @@ var jobs = {
 
 if($("body").data("menu") == 4) jobs.init();
 
+
 var accordion = {
   init: function() {
     $('.accordion-title').click(function() {
       $(this).parent().find('.accordion-content').slideToggle()
       $(this).toggleClass('active');
+      $(this).text() == 'Show more' ? $(this).text('Show less') : $(this).text('Show more')
     })
   }
 }
 
 if($("body").data("menu") == 6) accordion.init();
+
+
+var maxItems = {
+  init: function() {
+    var classes = $('.max-items').attr('class').split(" ");
+    console.log(classes);
+    var ourClass = classes.filter((aClass)=>{
+      if(aClass.indexOf('max--') != -1) return aClass;
+    });
+    var lastItem = ourClass[0].split('max--')[1];
+    $('.max-items').children().slice(lastItem).wrapAll("<div class='accordion-content'></div>");
+    $('.accordion-content').after("<a class='text-center accordion-title max-showmore'>Show more</a><hr class='light'>")
+    accordion.init();
+  }
+}
+
+if($(".max-items").length>0) maxItems.init();

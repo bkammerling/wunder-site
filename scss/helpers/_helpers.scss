@@ -5,3 +5,21 @@
     clear: both;
   }
 }
+
+.accordion-title {
+  cursor: pointer;
+}
+
+.max-showmore {
+  display: block;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.accordion-content {
+  display: none;
+}
+
+hr.light {
+    opacity: 0.4;
+}
