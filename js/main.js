@@ -203,8 +203,12 @@ var accordion = {
     $('.accordion-title').click(function() {
       $(this).parent().find('.accordion-content').slideToggle()
       $(this).toggleClass('active');
-      $(this).text() == 'Show more' ? $(this).text('Show less') : $(this).text('Show more')
-    })
+      if($(this).text() == 'Show more') {
+        $(this).text('Show less')
+      } else if($(this).text() == 'Show less') {
+        $(this).text('Show more');
+      }
+    });
   }
 }
 
