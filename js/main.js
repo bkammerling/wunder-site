@@ -157,7 +157,7 @@ var jobs = {
     }).done(function (data) {
       currentJobsHtml = jobs.build(data.jobs);
     }).fail(function(error) {
-      currentJobsHtml = '<p>Could not  connect with job board. Find our open positions <a href="https://boards.greenhouse.io/wunder/" target="_blank">here</a>.</p>';
+      currentJobsHtml = '<p>Could not connect with job board. Find our open positions <a href="https://boards.greenhouse.io/wunder/" target="_blank">here</a>.</p>';
     }).always(function() {
       $(".career-jobs__wrapper").append(currentJobsHtml);
     });
@@ -196,6 +196,7 @@ var jobs = {
 };
 
 if($("body").data("menu") == 4) jobs.init();
+if($("body").data("menu") == 1) jobs.init();
 
 
 var accordion = {

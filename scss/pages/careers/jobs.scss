@@ -1,0 +1,78 @@
+body.careers {
+
+  .careers-jobs {
+
+    .video-banner {
+      padding: rem(120px) rem(30px) rem(80px);
+      background-image: url(../img/banner-jobs.jpg);
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(../img/banner-jobs@2x.jpg);
+      }
+
+      @include rwd(tablet-up) {
+        padding: rem(170px) 0;
+      }
+    }
+
+    .job-list {
+      padding: rem(50px) 0;
+    }
+
+    .job-filters {
+      margin-bottom: rem(20px);
+
+      .job-filter {
+        padding: rem(18px) rem(20px) rem(16px);
+        background-color: $white;
+
+        &:not(:last-child) {
+          margin-right: rem(20px);
+        }
+
+        .job-filter__type {
+          -webkit-font-smoothing: antialiased;
+          font-size: 12px;
+          opacity: 0.5;
+        }
+
+        select {
+          -webkit-appearance: none;
+          display: block;
+          width: 100%;
+          border: 0;
+          background-color: transparent;
+          font-size: 18px;
+          color: $olive-matt;
+          font-family: $base-font-family;
+          font-weight: 700;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .select-wrapper {
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            background-image: url(../img/filter-down-arrow.svg);
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 0;
+            top: -5px;
+            pointer-events: none;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+
+}

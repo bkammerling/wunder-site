@@ -1,0 +1,20 @@
+body.careers {
+
+  .careers-home {
+
+    .video-banner {
+      padding: rem(120px) rem(30px) rem(80px);
+      background-image: url(../img/banner-careershome.png);
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(../img/banner-careershome@2x.png);
+      }
+
+      @include rwd(tablet-up) {
+        padding: rem(190px) 0;
+      }
+    }
+
+  }
+
+}

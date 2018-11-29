@@ -122,7 +122,7 @@ gulp.task("watch", ["index"], function() {
 
 gulp.task("imgmin", function() {
   return gulp
-    .src("img/*")
+    .src("img/**/*")
     .pipe(
       imagemin({
         progressive: true,
@@ -130,6 +130,7 @@ gulp.task("imgmin", function() {
         use: [pngquant()]
       })
     )
+    .pipe(rename({dirname: ''}))
     .pipe(gulp.dest("dist/img"));
 });
 
