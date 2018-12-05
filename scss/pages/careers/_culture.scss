@@ -1,0 +1,62 @@
+
+.careers-culture {
+
+  .video-banner {
+    background-image: url(../img/banner-culture.jpg);
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(../img/banner-culture@2x.jpg);
+    }
+
+  }
+
+  .wunder-values {
+    margin: rem(30px) 0;
+  }
+  .wunder-values__grid {
+    margin-top: rem(36px);
+    display: flex;
+    flex-flow: wrap;
+    .wunder-values__item {
+      background-color: $white;
+      flex: 1 1 40%;
+      text-align: center;
+      padding: rem(31px) rem(10px) rem(40px);
+      margin-right: rem(2px);
+      margin-bottom: rem(2px);
+      img {
+        margin-bottom: rem(16px);
+      }
+      h4 {
+        margin-bottom: rem(6px);
+      }
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+      @include rwd(mobile-up) {
+        flex: 1 1 32%;
+        &:nth-child(even) {
+          margin-right: rem(2px);
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+
+      }
+      @include rwd(tablet-up) {
+        flex: 1 1 16.4%;
+        &:nth-child(3n) {
+          margin-right: rem(2px);
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+
+
+}

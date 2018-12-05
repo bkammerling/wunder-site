@@ -159,31 +159,34 @@ var jobs = {
     }).fail(function(error) {
       currentJobsHtml = '<p>Could not connect with job board. Find our open positions <a href="https://boards.greenhouse.io/wunder/" target="_blank">here</a>.</p>';
     }).always(function() {
-      $(".career-jobs__wrapper").append(currentJobsHtml);
+      $(".job-list__listing").append(currentJobsHtml);
+      $(".job-list__listing > div").first().remove();
     });
   },
 
   build: function(data) {
     if(data.length < 1) return '<p>No positions currently available.</p>';
-    var sortedJobs = jobs.sort(data);
-    var jobsHtml = "";
+    var sortedJobs = data;
+    console.log(sortedJobs);
+    var singleHTML = $(".job-list__item").clone();
+    var jobListHTML = "";
     for(var i = 0; i < sortedJobs.length; i++) {
-      var job = sortedJobs[i]
-      if(i==0) {
-        jobsHtml += "<ul class=career-jobs__list><li>" + job.departments[0].name + "</li>"
-      } else if(job.departments[0].name !== sortedJobs[i-1].departments[0].name) {
-        jobsHtml += "</ul><ul class=career-jobs__list><li>" + job.departments[0].name + "</li>"
-      }
-      jobsHtml += "<li><a href=" + job.absolute_url + ">" + job.title + "</a></li>"
-      if(i==sortedJobs.length) {
-        console.log('last');
-        jobsHtml += "</ul>";
-      }
+      var job = sortedJobs[i];
+      singleHTML.find(".job-title").text(job.title);
+      singleHTML.find(".job-category").text(job.departments[0].name);
+      singleHTML.find(".job-title").attr('href', job.absolute_url);
+      var location = job.location.name.indexOf("Wunder") == -1 ? job.location.name : job.location.name.replace("Wunder ", "");
+
+      singleHTML.find(".job-location").text(location);
+      var content = $('<textarea />').html(job.content).text();
+      singleHTML.find(".job-excerpt").text(this.strip(content).substring(0, 300)+"...");
+      jobListHTML += singleHTML.wrap('<p/>').parent().html()
+
     } // end of for loop
-    return jobsHtml;
+    return jobListHTML;
   },
 
-  sort: function(array) {
+  sortByDepartment: function(array) {
     array.sort(function(a,b) {
       var depA = a.departments[0].name;
       var depB = b.departments[0].name;
@@ -192,11 +195,16 @@ var jobs = {
       return 0;
     });
     return array;
+  },
+
+  strip: function(html) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
   }
 };
 
-if($("body").data("menu") == 4) jobs.init();
-if($("body").data("menu") == 1) jobs.init();
+if($("body").data("menu") == 0 && $("body").hasClass('careers')) jobs.init();
 
 
 var accordion = {
