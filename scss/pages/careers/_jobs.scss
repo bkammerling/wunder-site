@@ -4,10 +4,10 @@ body.careers {
 
     .video-banner {
       padding: rem(120px) rem(30px) rem(80px);
-      background-image: url(../img/banner-jobs.jpg);
+      background-image: url(../img/careers/jobs_list_page-main_banner.jpg);
 
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(../img/banner-jobs@2x.jpg);
+        background-image: url(../img/careers/jobs_list_page-main_banner@2x.jpg);
       }
 
       @include rwd(tablet-up) {
@@ -65,7 +65,7 @@ body.careers {
           &:after {
             content: '';
             display: block;
-            background-image: url(../img/filter-down-arrow.svg);
+            background-image: url(../img/careers/filter-down-arrow.svg);
             width: 30px;
             height: 30px;
             position: absolute;
@@ -78,6 +78,12 @@ body.careers {
       }
 
     } /* end of .job-filters */
+
+    .job-list__listing > p {
+      font-size: 20px;
+      margin-top: 2rem;
+      min-height: 120px;
+    }
 
     .job-list__item {
       background-color: $white;

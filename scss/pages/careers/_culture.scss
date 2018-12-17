@@ -1,17 +1,24 @@
 
 .careers-culture {
 
+
+
   .video-banner {
-    background-image: url(../img/banner-culture.jpg);
+    background-image: url(../img/careers/culture_page-main-banner.jpg);
+    @include rwd(tablet-up) {
+      body & {
+        padding: rem(190px) 0;
+      }
+    }
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      background-image: url(../img/banner-culture@2x.jpg);
+      background-image: url(../img/careers/culture_page-main-banner@2x.jpg);
     }
 
   }
 
   .wunder-values {
-    margin: rem(30px) 0;
+    margin: rem(100px) 0 rem(80px);
   }
   .wunder-values__grid {
     margin-top: rem(36px);
@@ -21,7 +28,7 @@
       background-color: $white;
       flex: 1 1 40%;
       text-align: center;
-      padding: rem(31px) rem(10px) rem(40px);
+      padding: rem(25px) rem(15px) rem(22px);
       margin-right: rem(2px);
       margin-bottom: rem(2px);
       img {
@@ -35,6 +42,7 @@
       }
       @include rwd(mobile-up) {
         flex: 1 1 32%;
+        padding: rem(25px) rem(40px) rem(22px);
         &:nth-child(even) {
           margin-right: rem(2px);
         }
@@ -44,7 +52,7 @@
 
       }
       @include rwd(tablet-up) {
-        flex: 1 1 16.4%;
+        flex: 1 1 32%;
         &:nth-child(3n) {
           margin-right: rem(2px);
         }
@@ -52,6 +60,146 @@
 
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+
+
+  .maptooltip {
+    display: none;
+    background: $olive-matt;
+    color: $white;
+    margin-left: 30px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1000;
+  }
+
+  .diversity {
+    margin: rem(60px) 0;
+    max-width: 100%;
+    overflow: scroll;
+    @include rwd(tablet-up) {
+      overflow: visible;
+    }
+    .page-heading {
+      margin-bottom: rem(20px);
+    }
+
+    > *:not(svg) {
+      position: relative;
+      z-index: 1;
+    }
+
+
+
+    svg {
+      margin: 1rem 0 1rem;
+      transition: all 0.4s;
+      z-index: 0;
+      @include rwd(tablet-up) {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+
+    }
+    path {
+      fill: white;
+    }
+    #AR,#AU,#BA,#BE,#BG,#BR,#CA,#CN,#CO,#CZ,#DE,#ES,#FR,#GB,#HN,#IN,#IR,#KR,#KZ,#MX,#NL,#PA,#PL,#PH,#PT,#PY,#RO,#RS,#RU,#SG,#SV,#TH,#TN,#TR,#TW,#TZ,#UA,#US,#ZA {
+      fill: #D8D8D8;
+      transition: fill 0.5s;
+      //cursor: zoom-in;
+      &:hover {
+        fill: $sky-blue;
+        //fill: url(#MyGradient)
+      }
+
+    }
+  } // END of Diversity styling
+
+
+  .picture-slider__wrapper {
+    margin: rem(100px) 0 rem(60px);
+    div:focus {
+        outline: none;
+    }
+  }
+  .picture-slider {
+    margin-top: rem(30px);
+    overflow: visible;
+    .picture-slider__content-wrapper {
+      max-width: none;
+    }
+    .picture-slider__content {
+      background: $sky-blue;
+      @include rwd(desktop-up) {
+        max-width: rem(520px);
+      }
+    }
+    .picture-slider__quote, .picture-slider__author {
+      color: $white;
+      opacity: 1;
+    }
+    .picture-slider__author {
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-top: rem(15px);
+    }
+    .picture-slider__authorinfo {
+      color: #2D6F9B;
+    }
+
+    .slider__arrow {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .slider__arrow--next {
+      //transform: translateY(-50%);
+      @include rwd(tablet-up) {
+        right: calc(0px - 1.75rem);
+      }
+    }
+    .slider__arrow--prev {
+      //transform: rotate(180deg) translateY(50%);
+      @include rwd(tablet-up) {
+        left: calc(0px - 1.75rem);
+      }
+    }
+  }
+  .slick-dots {
+    display: none;
+  }
+  .picture-slider__menu {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(40px);
+    .picture-slider__menu-image {
+      margin-right: rem(30px);
+      opacity: 0.6;
+      filter: grayscale(100%);
+      cursor: pointer;
+      transition: opacity .2s;
+      &:hover {
+        filter: none;
+        //opacity: 1;
+      }
+      &.current {
+        filter: none;
+        opacity: 1;
+      }
+    }
+  }
+
+  body.careers & {
+    .cta-banner {
+      background-image: url(../img/careers/homepage.jpg);
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(../img/careers/homepage@2x.jpg);
       }
     }
   }
