@@ -20,7 +20,8 @@ var gulp = require("gulp"),
   replace = require('gulp-replace'),
   dom  = require('gulp-dom'),
   gutil = require('gulp-util'),
-  version = require('gulp-version-number');
+  version = require('gulp-version-number')
+  changed = require('gulp-changed');
 
 
 gulp.task("scss", function() {
@@ -124,7 +125,8 @@ gulp.task("watch", ["index"], function() {
 
 gulp.task("imgmin", function() {
   return gulp
-    .src(["img/**/*", "!/**/teams_03.svg"])
+    .src("img/**/*")
+    .pipe(changed("dist/img"))
     .pipe(
       imagemin({
         progressive: true,
