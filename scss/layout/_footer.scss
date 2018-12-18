@@ -13,7 +13,7 @@
   }
 
   h4 {
-    margin-bottom: rem(10px);    
+    margin-bottom: rem(10px);
     color: #647378;
   }
 
@@ -23,9 +23,9 @@
 
   li {
     padding: rem(9px) 0;
-    
+
     p {
-      color: $white;    
+      color: $white;
       font-size: rem(16px);
       line-height: 1.5;
     }
@@ -41,7 +41,7 @@
 
   @include rwd(tablet-up ) {
     a {
-      font-size: rem(11px);      
+      font-size: rem(11px);
     }
 
     li {
@@ -59,7 +59,8 @@
 }
 
 .footer__wrapper {
-  flex-direction: column;  
+  flex-direction: column;
+  margin-bottom: rem(25px);
 
   @include rwd(tablet-up) {
     flex-direction: row;
@@ -92,7 +93,7 @@
   @include rwd(tablet-up ) {
     display: flex;
     align-items: center;
-    justify-content: space-around; 
+    justify-content: space-around;
     font-size: rem(10px);
 
     li {
@@ -128,7 +129,7 @@
 ul.footer__socialmedia {
   display: flex;
   align-items: center;
-  margin-bottom: rem(10px); 
+  margin-bottom: rem(10px);
 
   li {
     padding-right: rem(20px);

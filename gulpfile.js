@@ -53,7 +53,9 @@ gulp.task("browser-sync", function() {
   browserSync({
     server: {
       baseDir: "dist/"
-    }
+    },
+    ghostMode: false,
+    reloadThrottle: 1
   });
 });
 
@@ -72,7 +74,7 @@ gulp.task("scss-lint", function() {
     .pipe(scsslint());
 });
 
-gulp.task("minify-html", ["html-strip"], function() {
+gulp.task("minify-html", function() {
   var opts = {
     comments: true,
     spare: true
@@ -115,17 +117,18 @@ gulp.task("jshint", function() {
 
 gulp.task("watch", ["index"], function() {
   gulp.watch("scss/**/*.scss", ["scss-lint", "scss"]);
-  gulp.watch("js/*.js", ["jshint", "index", "js"]);
-  gulp.watch("./**/*.html", ["index"]);
+  gulp.watch("js/*.js", ["jshint", "js", "index"]);
+  gulp.watch("html/**/*.html", { readDelay: 100 }, ["index"]);
   gulp.watch("img/**/*", ["imgmin", "videos"]);
 });
 
 gulp.task("imgmin", function() {
   return gulp
-    .src("img/*")
+    .src(["img/**/*", "!/**/*.svg"])
     .pipe(
       imagemin({
         progressive: true,
+        optimizationLevel: 1,
         svgoPlugins: [{ removeViewBox: false }],
         use: [pngquant()]
       })
@@ -171,23 +174,6 @@ gulp.task("index", function() {
     .pipe(gulp.dest("./dist"));
 });
 
-
-gulp.task("html-strip", ["index"], function() {
-  return gulp
-    .src("./dist/**/*.html")
-    .pipe(dom(function(){
-        var links = this.querySelectorAll('header.header a, footer.footer a');
-        [...links].forEach(function(link) {
-          var url = link.getAttribute("href");
-          if(url) {
-            var newUrl = url.replace('.html', '');
-            link.setAttribute('href', newUrl);
-          }
-        });
-        return this;
-    }))
-    .pipe(gulp.dest("./dist"));
-});
 
 
 gulp.task("default", [

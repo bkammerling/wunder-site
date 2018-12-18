@@ -1,6 +1,14 @@
+AOS.init();
+
 var slider = {
   init: function(target, config) {
     $(target).slick(config);
+    $(".picture-slider__menu-image").click(function(){
+      $(target).slick('slickGoTo', $(this).index());
+    });
+    $(target).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $(".picture-slider__menu-image:nth-child("+(nextSlide+1)+")").addClass('current').siblings().removeClass('current');
+    });
   }
 };
 
@@ -77,13 +85,22 @@ slider.init(".simple-slider", {
     ]
 });
 
-slider.init(".picture-slider", {
+slider.init("body:not(.careers) .picture-slider", {
   dots: true,
   lazyLoad: 'ondemand',
   prevArrow:
     '<span class="slider__arrow slider__arrow--prev"><img src="/img/slider-arrow.svg" alt="Prev"/></span>',
   nextArrow:
     '<span class="slider__arrow slider__arrow--next"><img src="/img/slider-arrow.svg" alt="Next"/></span>'
+});
+
+slider.init(".careers .picture-slider", {
+  dots: false,
+  lazyLoad: 'ondemand',
+  prevArrow:
+    '<span class="slider__arrow slider__arrow--prev"><img src="/img/careers/arrow-left.svg" alt="Prev"/></span>',
+  nextArrow:
+    '<span class="slider__arrow slider__arrow--next"><img src="/img/careers/arrow-right.svg" alt="Next"/></span>'
 });
 
 menu.init();
@@ -149,41 +166,90 @@ var form = {
 form.init();
 
 var jobs = {
+
+  filters: {
+    location: '',
+    departments: ''
+  },
+
   init: function() {
     var currentJobsHtml;
+    var urlParams = new URLSearchParams(window.location.search);
+    var teamParam = urlParams.get('team');
+    if(teamParam) {
+      jobs.filters.departments = teamParam;
+      $(".job-filter select.team-select").val(teamParam);
+    }
     $.ajax({
       method: "GET",
       url: "https://boards-api.greenhouse.io/v1/boards/wunder/jobs?content=true"
     }).done(function (data) {
-      currentJobsHtml = jobs.build(data.jobs);
+      jobs.jobArray = data.jobs;
+      var filteredJobs = jobs.filterJobs();
+      jobs.buildJobsList(filteredJobs)
     }).fail(function(error) {
-      currentJobsHtml = '<p>Could not  connect with job board. Find our open positions <a href="https://boards.greenhouse.io/wunder/" target="_blank">here</a>.</p>';
-    }).always(function() {
-      $(".career-jobs__wrapper").append(currentJobsHtml);
+      var errorMessageHTML = '<p>Could not connect with job board. Find our open positions <a href="https://boards.greenhouse.io/wunder/" target="_blank">here</a>.</p>';
+      $(".job-list__listing").append(errorMessageHTML);
     });
+
+    $(".job-filter select").change(function() {
+      var filterType = $(this).data('type');
+      jobs.filters[filterType] = $(this).val();
+      var filteredJobs = jobs.filterJobs();
+      jobs.buildJobsList(filteredJobs);
+    });
+
   },
 
-  build: function(data) {
-    if(data.length < 1) return '<p>No positions currently available.</p>';
-    var sortedJobs = jobs.sort(data);
-    var jobsHtml = "";
+  buildJobsList: function(jobData = this.jobArray) {
+    this.clear();
+    var jobHTML = this.makeHTML(jobData);
+    $(".job-list__listing").append(jobHTML);
+  },
+
+  jobArray: null,
+
+  makeHTML: function(jobData = this.jobArray) {
+    console.log(jobData);
+    if(jobData.length < 1) return '<p>😳 Sorry, no positions currently available.</p>';
+    var sortedJobs = jobData;
+    var singleHTML = $(".job-list__item").clone().removeClass('hidden');
+    var jobListHTML = "";
     for(var i = 0; i < sortedJobs.length; i++) {
-      var job = sortedJobs[i]
-      if(i==0) {
-        jobsHtml += "<ul class=career-jobs__list><li>" + job.departments[0].name + "</li>"
-      } else if(job.departments[0].name !== sortedJobs[i-1].departments[0].name) {
-        jobsHtml += "</ul><ul class=career-jobs__list><li>" + job.departments[0].name + "</li>"
+      var job = sortedJobs[i];
+      singleHTML.find(".job-title").text(job.title);
+      if(job.departments[0].name == 'Analytics') {
+        var jobCategory = 'Data';
+      } else {
+        jobCategory = job.departments[0].name;
       }
-      jobsHtml += "<li><a href=" + job.absolute_url + ">" + job.title + "</a></li>"
-      if(i==sortedJobs.length) {
-        console.log('last');
-        jobsHtml += "</ul>";
-      }
+      singleHTML.find(".job-category").text(jobCategory);
+      singleHTML.find(".job-title").attr('href', job.absolute_url);
+      var location = job.location.name.indexOf("Wunder") == -1 ? job.location.name : job.location.name.replace("Wunder ", "");
+      singleHTML.find(".job-location").text(location);
+      var content = $('<textarea />').html(job.content).text();
+      if(content.split('</h3>').length >= 3) content = content.split('</h3>')[2];
+
+      singleHTML.find(".job-excerpt").text(this.strip(content).substring(0, 300)+"...");
+      jobListHTML += singleHTML.wrap('<p/>').parent().html()
+
     } // end of for loop
-    return jobsHtml;
+    return jobListHTML;
   },
 
-  sort: function(array) {
+  filterJobs: function() {
+    var filteredJobs = this.jobArray.filter(function(item) {
+        //if(jobs.filters[key] == '') continue;
+        if(item.departments[0].name.toLowerCase().indexOf(jobs.filters.departments) !== -1 && item.location.name.toLowerCase().indexOf(jobs.filters.location) !== -1) return true;
+    });
+    return filteredJobs;
+  },
+
+  clear: function() {
+    $(".job-list__listing .job-list__item:not(.hidden), .job-list__listing > p").remove();
+  },
+
+  sortByDepartment: function(array) {
     array.sort(function(a,b) {
       var depA = a.departments[0].name;
       var depB = b.departments[0].name;
@@ -192,10 +258,16 @@ var jobs = {
       return 0;
     });
     return array;
+  },
+
+  strip: function(html) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
   }
 };
 
-if($("body").data("menu") == 4) jobs.init();
+if($("body").data("menu") == 2 && $("body").hasClass('careers')) jobs.init();
 
 
 var accordion = {
@@ -230,3 +302,95 @@ var maxItems = {
 }
 
 if($(".max-items").length>0) maxItems.init();
+
+
+var diversityMap = {
+  init: function() {
+    $(".diversity svg").click(function(evt) {
+      diversityMap.onclick(evt);
+    });
+
+    $("#AR,#AU,#BA,#BE,#BG,#BR,#CA,#CN,#CO,#CZ,#DE,#ES,#FR,#GB,#HN,#IN,#IR,#KR,#KZ,#MX,#NL,#PA,#PL,#PH,#PT,#PY,#RO,#RS,#RU,#SG,#SV,#TH,#TN,#TR,#TW,#TZ,#UA,#US,#ZA").hover(function() {
+      $('.maptooltip').show();
+      $('.maptooltip').text($(this).attr('title'));
+    }, function() {
+      $('.maptooltip').hide();
+    })
+
+    var tooltip = $('.maptooltip')[0];
+    document.addEventListener('mousemove', fn, false);
+    function fn(e) {
+        tooltip.style.left = e.pageX + 'px';
+        tooltip.style.top = e.pageY + 'px';
+    }
+  },
+
+  onclick: function(evt) {
+    var scaleAmount = 1.8;
+    var $svg = $(".diversity svg")
+    var x = evt.pageX - $svg.offset().left;
+    var y = evt.pageY - $svg.offset().top;
+    var centerX = $svg.width() / 2;
+    var centerY = $svg.height() / 2;
+
+    $svg.toggleClass('big');
+
+    var transformX = centerX-(x);
+    var transformY = centerY-(y);
+    var newCss = 'translate(' + transformX + 'px ,' + transformY + 'px) scale(' + scaleAmount + ')'
+    console.log(newCss);
+
+
+    if($svg.css('transform').length > 5) {
+      $svg.css('transform', 'none');
+    } else {
+      console.log('smaller');
+      $svg.css('transform', newCss);
+    }
+  }
+
+}
+if($("body").data("menu") == 0) diversityMap.init();
+
+
+var benefits = {
+  init: function() {
+
+    $(".cls-109").hover(function() {
+      $(".benefits svg").removeClass().addClass($(this).data('id'));
+      $(".benefitstooltip").addClass("mouseover");
+      $('.benefitstooltip').text($(this).data('title').toUpperCase());
+    }, function() {
+      $(".benefitstooltip").removeClass("mouseover");
+      $(".benefits svg").removeClass();
+    });
+
+    var tooltip = $('.benefitstooltip')[0];
+    document.addEventListener('mousemove', fn, false);
+    function fn(e) {
+        tooltip.style.left = e.pageX + 'px';
+        tooltip.style.top = e.pageY - 80 + 'px';
+    }
+  }
+}
+if($("body").data("menu") == -1) benefits.init();
+
+
+var scroller = {
+  header: $(".absolute-header"),
+  init: function() {
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 100) {
+        //clearHeader, not clearheader - caps H
+        scroller.header.addClass("darkHeader");
+      } else {
+        scroller.header.removeClass("darkHeader");
+      };
+      //if (scroll <= 600) $(".video-banner").css('backgroundPosition', "center "+scroll/6+"px");
+
+    });
+  }
+}
+scroller.init();

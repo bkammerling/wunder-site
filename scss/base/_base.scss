@@ -32,6 +32,12 @@ html, body {
 .hidden {
   display: none;
 }
+.visible-xs {
+  display: block;
+  @include rwd(mobile-up) {
+    display: none;
+  }
+}
 
 .responsive-video {
   padding: 56.25% 0 0 0;

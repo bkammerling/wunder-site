@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>assets/jobs/arrow-right-inactive</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.100000001">
+        <g id="Wunder-Careers-02-Jobs" transform="translate(-261.000000, -2032.000000)" fill="#334146" fill-rule="nonzero">
+            <g id="Jobs-Section" transform="translate(208.000000, 470.000000)">
+                <g id="Pages" transform="translate(0.000000, 1548.000000)">
+                    <g id="Group-5" transform="translate(53.000000, 14.000000)">
+                        <g id="right.9" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) ">
+                            <path d="M23.962,11.30825 C23.937,11.24625 23.9,11.19125 23.853,11.14525 L14.854,2.14625 C14.659,1.95125 14.342,1.95125 14.147,2.14625 C13.952,2.34125 13.952,2.65825 14.147,2.85325 L22.293,10.99925 L0.5,10.99925 C0.224,10.99925 0,11.22325 0,11.49925 C0,11.77525 0.224,11.99925 0.5,11.99925 L22.293,11.99925 L14.147,20.14525 C13.952,20.34025 13.952,20.65725 14.147,20.85225 C14.245,20.95025 14.373,20.99825 14.501,20.99825 C14.629,20.99825 14.757,20.94925 14.855,20.85225 L23.854,11.85325 C23.9,11.80725 23.937,11.75125 23.963,11.69025 C24.012,11.56825 24.012,11.43025 23.962,11.30825 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

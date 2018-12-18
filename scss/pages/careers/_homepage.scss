@@ -1,0 +1,288 @@
+body.careers {
+
+  .careers-home {
+
+
+    .video-banner {
+      padding: rem(120px) rem(30px) rem(80px);
+      background-image: url(../img/careers/home_page_main_banner.jpg);
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(../img/careers/home_page_main_banner@2x.jpg);
+      }
+
+      @include rwd(tablet-up) {
+        padding: rem(190px) 0;
+      }
+    }
+
+    .landing-grid__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .landing-grid__text, .landing-grid__image {
+      line-height: 0;
+      flex: 1 1 100%;
+      text-align: center;
+      &.xs-50 {
+        flex: 1 1 50%;
+      }
+      @media (min-width: $mobile) and (max-width: $tablet) {
+        .landing-grid__content.stat h2 { font-size: 30px }
+        h2 { font-size: 20px; line-height: 1; }
+        p { font-size: 13px; }
+        .landing-grid__content { width: 80% }
+      }
+      @include rwd(mobile-up) {
+        flex: 0 0 33%;
+        text-align: left;
+        &.xs-50 {
+          flex: 0 0 33%;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        object-fit: contain;
+      }
+    }
+    .landing-grid__image.long {
+      @include rwd(mobile-up) {
+        flex: 0 0 66%;
+      }
+    }
+    .landing-grid__text {
+      background: $white;
+      position: relative;
+      &.transparent {
+        background: transparent;
+      }
+      &:before {
+        content: "";
+      	display: block;
+        padding-top: 60%;
+        @include rwd(mobile-up) {
+      	   padding-top: 80%;
+         }
+        border-bottom: 1px solid #F4F4F4;
+      }
+      @include rwd(mobile-up) {
+        &:before {
+          padding-top: 100%;
+          border-bottom: none;
+        }
+      }
+    }
+
+    .landing-grid__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      h2 {
+        margin-bottom: rem(10px);
+      }
+      &.stat {
+        text-align: center;
+        h2 {
+          color: $grass-green;
+          letter-spacing: 1px;
+          text-transform: none;
+          font-size: 40px;
+        }
+      }
+      a {
+        margin-top: 20px;
+        display: inline-block;
+        float: right;
+      }
+    }
+
+
+
+    .our-teams {
+      margin: rem(80px) 0 rem(30px);
+    }
+    .our-teams__grid {
+      margin-top: rem(36px);
+      display: flex;
+      justify-content: flex-start;
+      flex-flow: wrap;
+
+      .our-teams__item {
+        background-color: $white;
+        flex: 1 1 40%;
+        text-align: center;
+        padding: rem(38px) rem(10px);
+        margin-right: rem(16px);
+        margin-bottom: rem(16px);
+        border: 1px solid transparent;
+        transition: all 0.2s;
+
+        img {
+          transition: all 0.2s;
+          margin-bottom: rem(16px);
+        }
+
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+        @include rwd(mobile-up) {
+          flex: 1 1 30%;
+          &:nth-child(even) {
+            margin-right: rem(16px);
+          }
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+          &:last-child {
+            max-width: 32%;
+          }
+        }
+        @include rwd(tablet-up) {
+          flex: 0 1 23%;
+          &:nth-child(3n) {
+            margin-right: rem(16px);
+          }
+          &:nth-child(4n) {
+            margin-right: 0;
+          }
+        }
+        @include rwd(desktop-up) {
+          flex: 1 1 18%;
+          &:nth-child(4n) {
+            margin-right: rem(16px);
+          }
+          &:nth-child(5n) {
+            margin-right: 0;
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+
+      }
+    }
+
+    .our-teams__item:hover {
+      transform: scale(0.97);
+      //box-shadow: inset 0 0 9px 1px rgba(0,0,0,0.2);
+      border: 1px solid rgba(0,0,0,.1);
+      img {
+        transform: scale(1.2);
+      }
+    }
+
+    .benefitstooltip {
+      opacity: 0;
+      transition: opacity 0.2s;
+      background: $white;
+      color: $olive-matt;
+      box-shadow: 0 0 12px 3px rgba(0,0,0,.1);
+      margin-left: 20px;
+      text-align: left;
+      font-weight: 900;
+      letter-spacing: 2px;
+      padding: 20px 25px 25px;
+      border-radius: 3px;
+      position: absolute;
+      z-index: 1000;
+      max-width: 115px;
+      font-size: 15px;
+      box-sizing: content-box;
+      line-height: 20px;
+      &.mouseover {
+          opacity: 1;
+      }
+    }
+
+    .benefits {
+      @include rwd(tablet-up) {
+        display: block;
+      }
+      margin-top: rem(80px);
+      margin-bottom: rem(80px);
+      .title-row {
+        margin-bottom: rem(40px);
+      }
+
+      circle.cls-109, rect.cls-57, #Group-402 path, #Group-402 polygon {
+        transition: fill 0.4s;
+      }
+
+      rect.cls-57 {
+        fill: #fafafa;
+      }
+      #map-path path {
+        transition: stroke 0.25s;
+        stroke: black;
+      }
+      #map-path circle  {
+        transition: fill 0.25s;
+        fill: black;
+      }
+      path.cls-28 {
+        pointer-events: none;
+      }
+      g.grayoverlay {
+        filter: url(#grayscale);
+        opacity: 1;
+        transition: opacity 0.4s;
+        &:hover {
+          opacity: 0;
+        }
+      }
+
+      svg {
+        &.balloon g#balloonOverlay, &.treasure g#treasureOverlay, &.beer g#beerOverlay, &.calendar g#calendarOverlay, &.gym g#gymOverlay, &.food g#foodOverlay{
+          opacity: 0;
+        }
+        &.map, #map:hover  {
+          rect.cls-57 {
+            //fill: ;
+          }
+          #Group-402 path, #Group-402 polygon {
+            fill: #06a0e3;
+          }
+          #map-path path {
+            //stroke: white;
+          }
+          #map-path circle  {
+            //fill: white;
+          }
+        }
+      }
+
+      g#girl-top {
+        transform: rotate(6deg);
+        animation: helloRotate 10s infinite;
+        transform-origin: 75% 200%;
+        position: relative;
+        //transition: transform 1s;
+      }
+      path#batman-arm {
+        //animation: batmanArm 12s infinite;
+        //transform: rotate(-3deg) translate(-63px,15px)
+      }
+      @keyframes helloRotate {
+        //0%   { transform: rotate(6deg); }
+        20%  { transform: rotate(0deg); }
+        55%  { transform: rotate(0deg); }
+        70% { transform: rotate(6deg); }
+      }
+      @keyframes batmanArm {
+        //0%   { transform: rotate(6deg); }
+        10%  { transform: translateX(0px); }
+        55%  { transform: translateX(0px); }
+        65% { transform: rotate(-3deg) translate(-63px,15px); }
+      }
+
+
+    }
+
+
+  }
+
+}
