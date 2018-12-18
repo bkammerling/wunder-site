@@ -4,7 +4,7 @@
 
 
   .video-banner {
-    background-image: url(../img/careers/culture_page-main-banner.jpg);
+    background-image: url(../img/careers/culture_main_banner.jpg);
     @include rwd(tablet-up) {
       body & {
         padding: rem(190px) 0;
@@ -12,7 +12,7 @@
     }
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      background-image: url(../img/careers/culture_page-main-banner@2x.jpg);
+      background-image: url(../img/careers/culture_main_banner@2x.jpg);
     }
 
   }
@@ -136,8 +136,10 @@
     }
     .picture-slider__content {
       background: $sky-blue;
+      padding: 2.5rem 1.25rem 3rem;
       @include rwd(desktop-up) {
         max-width: rem(520px);
+        padding: 2.5rem 1.25rem 5rem;
       }
     }
     .picture-slider__quote, .picture-slider__author {
@@ -154,19 +156,27 @@
     }
 
     .slider__arrow {
-      top: 50%;
+      top: 30%;
       transform: translateY(-50%);
+      opacity: 0.4;
+      &:hover {
+        opacity: 1;
+      }
+      @include rwd(tablet-up) {
+        top: 50%;
+        opacity: 1;
+      }
     }
     .slider__arrow--next {
-      //transform: translateY(-50%);
+      right: calc(0px + 1rem);
       @include rwd(tablet-up) {
         right: calc(0px - 1.75rem);
       }
     }
     .slider__arrow--prev {
-      //transform: rotate(180deg) translateY(50%);
+      left: calc(0px + 1.75rem);
       @include rwd(tablet-up) {
-        left: calc(0px - 1.75rem);
+        left: calc(0px - 1rem);
       }
     }
   }
@@ -175,7 +185,10 @@
   }
   .picture-slider__menu {
     display: flex;
-    justify-content: center;
+    overflow-x: scroll;
+    @include rwd(tablet-up) {
+      justify-content: center;
+    }
     margin-top: rem(40px);
     .picture-slider__menu-image {
       margin-right: rem(30px);

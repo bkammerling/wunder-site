@@ -218,11 +218,18 @@ var jobs = {
     for(var i = 0; i < sortedJobs.length; i++) {
       var job = sortedJobs[i];
       singleHTML.find(".job-title").text(job.title);
-      singleHTML.find(".job-category").text(job.departments[0].name);
+      if(job.departments[0].name == 'Analytics') {
+        var jobCategory = 'Data';
+      } else {
+        jobCategory = job.departments[0].name;
+      }
+      singleHTML.find(".job-category").text(jobCategory);
       singleHTML.find(".job-title").attr('href', job.absolute_url);
       var location = job.location.name.indexOf("Wunder") == -1 ? job.location.name : job.location.name.replace("Wunder ", "");
       singleHTML.find(".job-location").text(location);
       var content = $('<textarea />').html(job.content).text();
+      if(content.split('</h3>').length >= 3) content = content.split('</h3>')[2];
+
       singleHTML.find(".job-excerpt").text(this.strip(content).substring(0, 300)+"...");
       jobListHTML += singleHTML.wrap('<p/>').parent().html()
 
