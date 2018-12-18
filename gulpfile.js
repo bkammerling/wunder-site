@@ -124,7 +124,7 @@ gulp.task("watch", ["index"], function() {
 
 gulp.task("imgmin", function() {
   return gulp
-    .src(["img/**/*", "!/**/*.svg"])
+    .src(["img/**/*", "!/**/teams_03.svg"])
     .pipe(
       imagemin({
         progressive: true,
