@@ -366,10 +366,15 @@ var benefits = {
     });
 
     var tooltip = $('.benefitstooltip')[0];
-    document.addEventListener('mousemove', fn, false);
+    $(".benefits svg").hover(function() {
+        document.addEventListener('mousemove', fn, false);
+    }, function() {
+      document.removeEventListener('mousemove', fn, false);
+    });
+
     function fn(e) {
-        tooltip.style.left = e.pageX + 'px';
-        tooltip.style.top = e.pageY - 80 + 'px';
+      tooltip.style.left = e.pageX + 'px';
+      tooltip.style.top = e.pageY - 80 + 'px';
     }
   }
 }
