@@ -182,25 +182,6 @@ body.careers {
   }
 
 
-  .home-video {
-    margin: rem(80px) 0;
-    position: relative;
-    h2 {
-      margin-bottom: rem(30px);
-    }
-    img {
-      max-width: 100%;
-    }
-    a {
-      opacity: 1;
-      position: absolute;
-      top: 50%;
-      //transform: translateY(-50%);
-      right: 50px;
-    }
-  }
-
-
 
   .image-captions {
     position: relative;
@@ -307,6 +288,7 @@ body.careers {
     display: inline-block;
     transition: all 0.2s linear;
     max-width: 270px;
+    cursor: pointer;
 
     &:after {
       content: '';

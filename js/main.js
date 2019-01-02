@@ -1,5 +1,35 @@
 AOS.init();
 
+var videoPlayer = {
+  player: null,
+  init: function() {
+    player = new Plyr('#player', {
+      controls: ['play','progress','volume'],
+      clickToPlay: false,
+      hideControls: true,
+      resetOnEnd: true
+    });
+    player.on('ready', event => {
+      player.toggleControls(false);
+    });
+    player.on('ended', event => {
+      player.restart();
+    });
+    $("#video-btn").click(function() {
+      videoPlayer.startPlay();
+      $("#player").css('pointerEvents', 'auto');
+      $(this).fadeOut();
+    });
+  },
+  startPlay: function() {
+    player.toggleControls();
+    player.play();
+  }
+}
+videoPlayer.init();
+
+
+
 var slider = {
   init: function(target, config) {
     $(target).slick(config);
@@ -386,7 +416,6 @@ var scroller = {
   init: function() {
     $(window).scroll(function() {
       var scroll = $(window).scrollTop();
-
       if (scroll >= 100) {
         //clearHeader, not clearheader - caps H
         scroller.header.addClass("darkHeader");
