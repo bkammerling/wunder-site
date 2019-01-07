@@ -129,7 +129,10 @@ body.careers {
         position: absolute;
         top: calc(50% + 10px);
         //transform: translateY(-50%);
-        right: 50px;
+        right: calc(50% - 100px);
+      }
+      .plyr__poster {
+        background-color: #fff;
       }
     }
 

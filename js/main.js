@@ -11,6 +11,7 @@ var videoPlayer = {
     });
     player.on('ready', event => {
       player.toggleControls(false);
+      player.poster = "/img/careers/hrvideo-poster.png";
     });
     player.on('ended', event => {
       player.restart();
@@ -340,7 +341,7 @@ var diversityMap = {
       diversityMap.onclick(evt);
     });
 
-    $("#AR,#AU,#BA,#BE,#BG,#BR,#CA,#CN,#CO,#CZ,#DE,#ES,#FR,#GB,#HN,#IN,#IR,#KR,#KZ,#MX,#NL,#PA,#PL,#PH,#PT,#PY,#RO,#RS,#RU,#SG,#SV,#TH,#TN,#TR,#TW,#TZ,#UA,#US,#ZA").hover(function() {
+    $("#AR,#AU,#BA,#BE,#BG,#BR,#CA,#CN,#CO,#CZ,#DE,#EG,#ES,#FR,#GB,#HN,#IN,#IR,#KR,#KZ,#LC,#MX,#NL,#PA,#PL,#PH,#PT,#PY,#RO,#RS,#RU,#SG,#SV,#TH,#TN,#TR,#TW,#TZ,#UA,#US,#ZA").hover(function() {
       $('.maptooltip').show();
       $('.maptooltip').text($(this).attr('title'));
     }, function() {
@@ -386,7 +387,7 @@ if($("body").data("menu") == 0) diversityMap.init();
 var benefits = {
   init: function() {
 
-    $(".cls-109").hover(function() {
+    $(".cls-109, .grayoverlay, svg #map").hover(function() {
       $(".benefits svg").removeClass().addClass($(this).data('id'));
       $(".benefitstooltip").addClass("mouseover");
       $('.benefitstooltip').text($(this).data('title').toUpperCase());
