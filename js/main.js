@@ -11,7 +11,8 @@ var videoPlayer = {
     });
     player.on('ready', event => {
       player.toggleControls(false);
-      player.poster = "/img/careers/hrvideo-poster.png";
+      player.poster = "/img/careers/hrvideo-poster3.png";
+      player.loadVideo();
     });
     player.on('ended', event => {
       player.restart();
