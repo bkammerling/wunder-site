@@ -342,7 +342,7 @@ var diversityMap = {
       diversityMap.onclick(evt);
     });
 
-    $("#AR,#AU,#BA,#BE,#BG,#BR,#CA,#CN,#CO,#CZ,#DE,#EG,#ES,#FR,#GB,#HN,#IN,#IR,#KR,#KZ,#LC,#MX,#NL,#PA,#PL,#PH,#PT,#PY,#RO,#RS,#RU,#SG,#SV,#TH,#TN,#TR,#TW,#TZ,#UA,#US,#ZA").hover(function() {
+    $("#AR,#AU,#BA,#BE,#BG,#BR,#CA,#CD,#CN,#CO,#CZ,#DE,#EG,#ES,#FR,#GB,#HN,#IN,#IR,#KR,#KZ,#LC,#MX,#NL,#PA,#PL,#PH,#PT,#PY,#RO,#RS,#RU,#SG,#SV,#TH,#TN,#TR,#TW,#TZ,#UA,#US,#ZA").hover(function() {
       $('.maptooltip').show();
       $('.maptooltip').text($(this).attr('title'));
     }, function() {
