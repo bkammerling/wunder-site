@@ -146,6 +146,10 @@ gulp.task("fonts", function() {
   return gulp.src("fonts/*").pipe(gulp.dest("dist/fonts"));
 });
 
+gulp.task("greenhouse", function() {
+  return gulp.src("greenhouse.css").pipe(gulp.dest("dist/"));
+});
+
 
 gulp.task("index", function() {
   return gulp
@@ -186,7 +190,8 @@ gulp.task("default", [
   "index",
   "js",
   "scss",
-  "watch"
+  "watch",
+  "greenhouse"
 ]);
 gulp.task("prod", ["min-js", "minify-html"]);
 gulp.task("build", [
@@ -195,5 +200,6 @@ gulp.task("build", [
   "videos",
   "index",
   "js",
-  "scss"
+  "scss",
+  "greenhouse"
 ]);
