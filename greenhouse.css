@@ -31,6 +31,8 @@ a:hover {
 #logo > a {
   background: url(https://wunder.org/img/wundermobility-black.svg) no-repeat;
   display: block;
+  background-size: 300px;
+  background-position: center left;
 }
 
 #logo img {
