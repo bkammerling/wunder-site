@@ -3,6 +3,7 @@
 /*  http://www.wundermobility.com/:splat 301
 /  http://www.wundermobility.com/ 301
 
+
 # Redirect with 301
 /terms          /terms-conditions   301
 /termos-de-uso  /pt/terms-conditions    301
