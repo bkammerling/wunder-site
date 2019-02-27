@@ -195,7 +195,6 @@ gulp.task("default", [
 ]);
 gulp.task("prod", ["min-js", "minify-html"]);
 gulp.task("build", [
-  "imgmin",
   "fonts",
   "videos",
   "index",
